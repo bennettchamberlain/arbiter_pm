@@ -1,0 +1,66 @@
+name: arbiter_pm
+version: 1.0.0+1
+publish_to: none
+description: Another Flutter project.
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+  animated_text_kit: ^4.2.2
+  auto_animated: ^3.0.1
+  carousel_slider: ^4.0.0-nullsafety.0
+  cloud_firestore: ^4.12.2
+  cupertino_icons: ^1.0.2
+  draggable_scrollbar: ^0.1.0
+  firebase_auth: ^4.14.1
+  firebase_core: ^2.23.0
+  firebase_ui_oauth: ^1.4.14
+  firebase_ui_auth: ^1.10.0
+  flutter:
+    sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.2.1
+  flutter_svg: ^2.0.9
+  font_awesome_flutter: ^10.6.0
+  get: ^4.6.6
+  get_storage: ^2.0.3
+  glassmorphism_ui: ^0.3.0
+  google_fonts: ^6.1.0
+  url_launcher: ^6.0.6
+
+dev_dependencies:
+  flutter_lints: ^3.0.1
+  flutter_test:
+    sdk: flutter
+  lints: ^3.0.0
+  drive: ^1.0.0-1.0.nullsafety.1
+  firebase_ui_shared: ^1.4.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/images/Logo Mark/
+    - assets/images/Primary Logo/
+    - assets/images/New Content/
+
+  fonts:
+    - family: Agustina
+      fonts:
+        - asset: assets/fonts/agustina.otf
+
+    - family: Helvetica Now Display
+      fonts:
+        - asset: assets/fonts/HelveticaNowDisplay-Regular.ttf
+        - asset: assets/fonts/HelveticaNowDisplay-Medium.ttf
+        - asset: assets/fonts/HelveticaNowDisplay-ExtraBold.ttf
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/Logo-mark.png"
+
+flutter_native_splash:
+  color: "#ECFFFD"
+  image: assets/icons/Logo-mark.png
+  android_12: null
