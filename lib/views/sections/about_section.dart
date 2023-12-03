@@ -39,69 +39,82 @@ class AboutSection extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                        Text(' About \nmy story',
+                        Text('About',
                             style: theme.textTheme.headline2!
                                 .copyWith(fontWeight: FontWeight.w900)),
                         SizedBox(height: 25),
                         Image.asset(
                             theme.brightness == Brightness.light
-                                ? signaturePic
-                                : signaturePicWhite,
-                            width: 200),
+                                ? star2
+                                : star2,
+                            width: 100),
                       ],
                     ),
+                    SizedBox(
+                      width: 20,
+                    ),
                     Expanded(child: AboutSectionText(text: aboutMeTexta)),
-                    ExperienceCountCard(expNum: '03'),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    ExperienceCountCard(expNum: '10'),
+                    SizedBox(
+                      width: 20,
+                    ),
                     Expanded(child: AboutSectionText(text: aboutMeTextb)),
                   ],
                 )
               : Container(
-                  height: _.height * 1.3,
+                  height: _.height * 1,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         children: [
-                          Text('  About \nmy story',
-                              style: theme.textTheme.headline2!
-                                  .copyWith(fontWeight: FontWeight.w900)),
-                          SizedBox(height: 25),
-                          Image.asset(
-                              theme.brightness == Brightness.light
-                                  ? signaturePic
-                                  : signaturePicWhite,
-                              width: 200),
+                          Row(
+                            children: [
+                              Image.asset(star2, width: 65),
+                              SizedBox(width: 10),
+                              Text('About',
+                                  style: theme.textTheme.headline2!
+                                      .copyWith(fontWeight: FontWeight.w900)),
+                            ],
+                          ),
                         ],
                       ),
                       SizedBox(height: kDefaultPadding),
                       Expanded(
                         child: AboutSectionText(text: aboutMeTexta),
                       ),
-                      ExperienceCountCard(expNum: '03'),
-                      SizedBox(height: kDefaultPadding * 1.8),
+                      ExperienceCountCard(expNum: '10'),
+                      SizedBox(height: kDefaultPadding * 3.5),
                       Expanded(
                         child: AboutSectionText(text: aboutMeTextb),
                       ),
                     ],
                   ),
                 ),
-          SizedBox(height: kDefaultPadding * 3),
+          SizedBox(height: kDefaultPadding / 5),
+          SizedBox(height: 70),
           ResponsiveWidget.isLargeScreen(context)
               ? Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     AnOutlinedButton(
                       width: 200,
-                      text: 'Hire Me',
-                      imageSrc: iconHandPic,
+                      text: 'Hire Us',
+                      imageSrc: hireUs,
                       press: () => launchEmailUrl(),
                     ),
-                    SizedBox(width: kDefaultPadding * 1 * 5),
+                    SizedBox(width: kDefaultPadding * 1 * 4),
                     ATextButton(
-                      width: 200,
-                      text: 'Download \n   my CV',
-                      imageSrc: iconDownloadPic,
-                      press: () {}, //TODO: CV url
+                      width: 250,
+                      text: 'Our Past Work',
+                      imageSrc: ourWork,
+                      press: () {
+                        selectedIndex = 3;
+                        Obx(scrollcontroller.scrollTo(context, selectedIndex));
+                      },
                     ),
                     SizedBox(width: kDefaultPadding * 1 * 5),
                   ],
@@ -111,15 +124,15 @@ class AboutSection extends StatelessWidget {
                   children: [
                     AnOutlinedButton(
                       width: 175,
-                      text: 'Hire Me',
-                      imageSrc: iconHandPic,
+                      text: 'Hire Us',
+                      imageSrc: hireUs,
                       press: () => launchEmailUrl(),
                     ),
                     SizedBox(width: kDefaultPadding * .4),
                     ATextButton(
                       width: 175,
-                      text: 'Download \n   my CV',
-                      imageSrc: iconDownloadPic,
+                      text: 'Our Past Work',
+                      imageSrc: ourWork,
                       press: () {}, //TODO: CV url
                     ),
                   ],

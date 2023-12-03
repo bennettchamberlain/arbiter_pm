@@ -17,27 +17,27 @@ class Service {
 
 List<Service> services = [
   Service(
-    'Flutter Development',
-    servicePic1,
+    'App Development',
+    appDev,
     1,
-    Color(0xFFD9FFFC),
+    Color(0xFFcce6ff),
   ),
   Service(
-    'Web Design',
-    servicePic2,
+    'Website Development',
+    webDev,
     2,
-    Color(0xFFE4FFC7),
+    Color(0xFFfddeb2),
   ),
   Service(
     'UI-UX Design',
-    servicePic3,
+    uiUx,
     3,
-    Color(0xFFFFF3DD),
+    Color(0xFFefe3fe),
   ),
   Service(
     'Cloud Services',
-    servicePic4,
+    cloud,
     4,
-    Color(0xFFFFE0E0),
+    Color(0xFFd3decc),
   ),
 ];

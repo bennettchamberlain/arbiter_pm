@@ -34,8 +34,8 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
     'Home',
     'About',
     'Services',
-    'Portfolio',
-    'Testimonial',
+    'Our Work',
+    'Testimonials',
     'Contact',
   ];
 
@@ -53,7 +53,7 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
               gradient: LinearGradient(
                 colors: theme.brightness == Brightness.light
                     ? [primaryColor, kPink]
-                    : [bgColorDarkTheme, textColorLightTheme],
+                    : [davyGrey, eerieBlack],
                 begin: Alignment.bottomLeft,
                 end: Alignment.topRight,
               ),
@@ -72,16 +72,56 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Align(
-                          alignment: Alignment.topLeft,
-                          child: SmallSocialCard(
-                            iconSrc: theme.brightness == Brightness.light
-                                ? darkModeImage
-                                : lightModeImage,
-                            color: theme.brightness == Brightness.light
-                                ? bgColorDarkTheme
-                                : kPink,
-                            size: 25,
-                            press: () => themeController.toggleTheme(),
+                          alignment: Alignment.center,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    shape: RoundedRectangleBorder(
+                                        side: const BorderSide(
+                                            width: 2, // thickness
+                                            color: Colors.white // color
+                                            ),
+                                        // border radius
+                                        borderRadius:
+                                            BorderRadius.circular(16))),
+                                onPressed: () {
+                                  Navigator.of(context).pushNamed("/pay");
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.all(5),
+                                  child: Text(
+                                    "PAY INVOICE",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.w900),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    shape: RoundedRectangleBorder(
+                                        side: const BorderSide(
+                                            width: 2, // thickness
+                                            color: Colors.white // color
+                                            ),
+                                        // border radius
+                                        borderRadius:
+                                            BorderRadius.circular(16))),
+                                onPressed: () {
+                                  launchEmailUrl();
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.all(5),
+                                  child: Text(
+                                    "CONTACT US",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.w900),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                         SizedBox(height: kDefaultPadding),
@@ -93,35 +133,21 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                             width: 100,
                             clipBehavior: Clip.antiAlias,
                             decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: kPinker.withOpacity(.2),
-                              border: Border.all(
-                                color: primaryColor,
-                                width: 4,
-                              ),
                               boxShadow: [
                                 BoxShadow(
                                   offset: Offset(0, 10),
                                   blurRadius: 50,
                                   color: theme.brightness == Brightness.light
-                                      ? kPitchDark.withOpacity(.1)
-                                      : whitebackgroundColor.withOpacity(.1),
+                                      ? kPitchDark.withOpacity(.9)
+                                      : whitebackgroundColor.withOpacity(.9),
                                 ),
                               ],
                               image: DecorationImage(
-                                  image: AssetImage(personaPic)),
+                                  image: AssetImage(starsTogether)),
                             ),
                           ),
                         ),
                         SizedBox(height: kDefaultPadding * .5),
-                        Text(
-                          'Steve Chege',
-                          style: theme.textTheme.headline6!.copyWith(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 18,
-                            letterSpacing: 0,
-                          ),
-                        ),
                         SizedBox(height: kDefaultPadding),
                       ],
                     ),

@@ -6,6 +6,7 @@ import '../../constants/colors.dart';
 import '../../constants/image_paths.dart';
 import '../../models/recentwork_model.dart';
 import '../../widgets/hireme_card.dart';
+import '../../widgets/recent_work_dialog.dart';
 import '../../widgets/recentwork_card.dart';
 import '../../widgets/responsive_widget.dart';
 
@@ -22,9 +23,7 @@ class RecentWorkSection extends StatelessWidget {
         color: theme.brightness == Brightness.light
             ? Color(0xFFF7E8FF)
             : bgColorDarkTheme,
-        image: DecorationImage(
-            fit: BoxFit.cover,
-            image: AssetImage(recentworksectionBackgroundImage)),
+        image: DecorationImage(fit: BoxFit.cover, image: AssetImage(bg_img1)),
       ),
       child: Column(
         children: [
@@ -33,8 +32,8 @@ class RecentWorkSection extends StatelessWidget {
             child: HireMeCard(),
           ),
           SectionTitle(
-            title: 'Recent Works',
-            subTitle: 'My Strong Arenas',
+            title: 'Client Success Showcase',
+            subTitle: 'Portfolio Highlights',
             color: Color(0xFFFFB100),
           ),
           SizedBox(height: kDefaultPadding * 1.5),
@@ -55,7 +54,16 @@ class RecentWorkSection extends StatelessWidget {
                           : kDefaultPadding),
                   child: RecentWorkCard(
                     index: index,
-                    press: () {},
+                    press: () {
+                      
+                      showDialog(
+                       
+                        context: context,
+                        builder: (context) {
+                          return RecentWorkDialog(index: index);
+                        },
+                      );
+                    },
                   ),
                 ),
               ),

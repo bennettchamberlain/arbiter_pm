@@ -11,23 +11,50 @@ class ThemeToggleButton extends GetView<ThemeController> {
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
 
-    return ElevatedButton(
-      onPressed: () => controller.toggleTheme(),
-      child: theme.brightness == Brightness.light
-          ? Image.asset(darkModeImage)
-          : Image.asset(lightModeImage),
-      style: theme.elevatedButtonTheme.style!.copyWith(
-        backgroundColor: MaterialStateProperty.resolveWith<Color>(
-          (Set<MaterialState> states) => theme.brightness == Brightness.light
-              ? bgColorDarkTheme
-              : primaryColor,
+    return Row(
+      children: [
+        ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).pushNamed("/pay");
+          },
+          child: Container(
+            padding: EdgeInsets.all(5),
+            child: Text(
+              "PAY INVOICE",
+              style: TextStyle(fontWeight: FontWeight.w900),
+            ),
+          ),
         ),
-        shadowColor: MaterialStateProperty.resolveWith<Color>(
-          (Set<MaterialState> states) => theme.brightness == Brightness.light
-              ? bgColorDarkTheme
-              : textColorDarkTheme,
+        SizedBox(
+          width: 20,
         ),
-      ),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).pushNamed("/unknown");
+          },
+          child: Container(
+            padding: EdgeInsets.all(5),
+            child: Text(
+              "CONTACT",
+              style: TextStyle(fontWeight: FontWeight.w900),
+            ),
+          ),
+          style: theme.elevatedButtonTheme.style!.copyWith(
+            backgroundColor: MaterialStateProperty.resolveWith<Color>(
+              (Set<MaterialState> states) =>
+                  theme.brightness == Brightness.light
+                      ? bgColorDarkTheme
+                      : primaryColor,
+            ),
+            shadowColor: MaterialStateProperty.resolveWith<Color>(
+              (Set<MaterialState> states) =>
+                  theme.brightness == Brightness.light
+                      ? bgColorDarkTheme
+                      : textColorDarkTheme,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

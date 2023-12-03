@@ -21,13 +21,12 @@ void main() async {
       title: "Arbiter Project Management",
       debugShowCheckedModeBanner: false,
       initialBinding: Binding(),
-      
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
       unknownRoute: AppPages.routes[1],
       themeMode: Get.put<ThemeController>(ThemeController()).themeMode,
-      theme: Themes.lightThemeData,
-      darkTheme: Themes.darkThemeData,
+      theme: Themes.darkThemeData,
+      darkTheme: Themes.lightThemeData,
     ),
   );
 }

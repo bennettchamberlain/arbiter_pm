@@ -38,7 +38,7 @@ class ATextButton extends StatelessWidget {
                     ? kDefaultPadding * .3
                     : kDefaultPadding * .5,
               ),
-              Text(text, style: buttonTextStyle),
+              Text(text, style: buttonTextStyle2),
             ],
           ),
         ),

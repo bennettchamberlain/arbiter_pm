@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../models/recentwork_model.dart';
 import '../constants/colors.dart';
 import '../constants/text_styles.dart';
+import 'recent_work_dialog.dart';
 
 class RecentWorkCard extends StatefulWidget {
   const RecentWorkCard({
@@ -78,7 +79,7 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(height: kDefaultPadding),
+                    //SizedBox(height: kDefaultPadding),
                     Expanded(
                       child: Text(
                           recentWorks[widget.index].category.toUpperCase(),
@@ -91,36 +92,19 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
                         fontFamily: 'Helvetica Now Display',
                         fontWeight: FontWeight.w400,
                         fontSize:
-                            ResponsiveWidget.isSmallScreen(context) ? 25 : 33,
+                            ResponsiveWidget.isSmallScreen(context) ? 25 : 28,
                         letterSpacing: -.3,
                         color: kTextColor,
                       ),
                     ),
-                    SizedBox(height: kDefaultPadding),
+                    SizedBox(height: kDefaultPadding * 0.8),
                     Expanded(
                       child: InkWell(
                         onTap: () {
                           showDialog(
                             context: context,
                             builder: (context) {
-                              return Scaffold(
-                                backgroundColor: whitebackgroundColor,
-                                body: Container(
-                                    height: 100,
-                                    width: 100,
-                                    color: whitebackgroundColor,
-                                    child: Column(
-                                      children: [
-                                        IconButton(
-                                            onPressed: () {
-                                              Navigator.of(context).pop();
-                                            },
-                                            icon:
-                                                Icon(Icons.keyboard_backspace)),
-                                        Text("Hello"),
-                                      ],
-                                    )),
-                              );
+                              return RecentWorkDialog(index: widget.index);
                             },
                           );
                         },
@@ -128,7 +112,7 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
                             style: recentworkcardText3TextStyle),
                       ),
                     ),
-                    SizedBox(height: kDefaultPadding * .5),
+                    SizedBox(height: kDefaultPadding * .2),
                   ],
                 ),
               ),

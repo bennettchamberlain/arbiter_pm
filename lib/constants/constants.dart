@@ -8,6 +8,8 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'colors.dart';
 
+int selectedIndex = 0;
+
 const double kDefaultPadding = 20.0;
 
 final Duration hoverAnimationDuration = Duration(milliseconds: 200);

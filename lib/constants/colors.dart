@@ -16,7 +16,7 @@ const Color kPitchDark = Color(0xFF0F141E);
 
 const Color whitebackgroundColor = Color.fromARGB(255, 216, 219, 226);
 
-const Color primaryColor = Color.fromARGB(255, 245, 201, 255);
+const Color primaryColor = Color.fromARGB(255, 58, 1, 92);
 
 const Color secondaryColorLightTheme = Color(0xFFEEF1F7);
 const Color textColorLightTheme = Color(0xFF132144);

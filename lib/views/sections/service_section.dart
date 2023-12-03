@@ -19,9 +19,9 @@ class ServiceSection extends GetView<ScrollingController> {
       child: Column(
         children: [
           SectionTitle(
-            title: 'My Strong Arenas',
+            title: 'Our Expertise',
             subTitle: 'Service Offerings',
-            color: Color(0xFFFF0000),
+            color: Color(0xFFb375fe),
           ),
           ResponsiveWidget.isLargeScreen(context)
               ? Padding(

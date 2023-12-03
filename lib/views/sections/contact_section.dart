@@ -24,7 +24,7 @@ class ContactSection extends StatelessWidget {
                 ? whitebackgroundColor
                 : bgColorDarkTheme,
             image: DecorationImage(
-              image: AssetImage(contactsectionBackgroundImage),
+              image: AssetImage(bg_img1),
               fit: BoxFit.cover,
             ),
           ),

@@ -47,7 +47,7 @@ class GlassContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Hello There!',
+              'Relationship Oriented, Result Driven',
               style: TextStyle(
                 fontFamily: 'Helvetica Now Display',
                 fontWeight: FontWeight.w400,
@@ -60,11 +60,11 @@ class GlassContent extends StatelessWidget {
             ),
             SizedBox(height: kDefaultPadding),
             Text(
-              'Steve \nChege',
+              'Project Management\nFrom Start To Finish',
               style: TextStyle(
                 fontFamily: 'Helvetica Now Display',
                 fontWeight: FontWeight.w800,
-                fontSize: ResponsiveWidget.isSmallScreen(context) ? 55 : 66,
+                fontSize: ResponsiveWidget.isSmallScreen(context) ? 45 : 66,
                 letterSpacing: 1,
                 color: theme.brightness == Brightness.light
                     ? whitebackgroundColor

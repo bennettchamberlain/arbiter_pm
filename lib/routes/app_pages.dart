@@ -11,7 +11,7 @@ class AppPages {
   AppPages._();
 
   static const INITIAL = Routes.HOME;
-  static const UNOTKNOWN = Routes.UNKNOWN;
+  static const UNKNOWN = Routes.UNKNOWN;
 
   static final routes = [
     GetPage(

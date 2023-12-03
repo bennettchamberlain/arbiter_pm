@@ -15,7 +15,7 @@ class MenuBar extends StatefulWidget {
 }
 
 class _MenuBarState extends State<MenuBar> {
-  int selectedIndex = 0;
+  
   int hoverIndex = 0;
 
   static var scrollcontroller = Get.find<ScrollingController>();
@@ -24,8 +24,8 @@ class _MenuBarState extends State<MenuBar> {
     'Home',
     'About',
     'Services',
-    'Portfolio',
-    'Testimonial',
+    'Our Work',
+    'Testimonials',
     'Contact',
   ];
 
@@ -56,7 +56,7 @@ class _MenuBarState extends State<MenuBar> {
         ],
       ),
       constraints: BoxConstraints(maxWidth: _.width * .85),
-      height: 75,
+      height: 87,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: List.generate(

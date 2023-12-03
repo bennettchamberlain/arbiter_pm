@@ -20,7 +20,7 @@ class AboutSectionText extends StatelessWidget {
               : 0),
       child: Text(
         text,
-        textAlign: TextAlign.center,
+        textAlign: TextAlign.left,
         style: theme.textTheme.bodyText1!
             .copyWith(fontSize: 18, fontWeight: FontWeight.w300),
       ),

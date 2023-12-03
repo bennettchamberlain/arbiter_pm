@@ -4,10 +4,18 @@ import 'package:flutter/material.dart';
 
 final TextStyle buttonTextStyle = TextStyle(
   fontFamily: 'Helvetica Now Display',
-  fontWeight: FontWeight.w300,
-  fontSize: 11,
+  fontWeight: FontWeight.w500,
+  fontSize: 14,
   letterSpacing: 1,
-  color: kTextColor,
+  color: whitebackgroundColor,
+);
+
+final TextStyle buttonTextStyle2 = TextStyle(
+  fontFamily: 'Helvetica Now Display',
+  fontWeight: FontWeight.w500,
+  fontSize: 14,
+  letterSpacing: 1,
+  color: russianViolet,
 );
 
 final TextStyle feedbackCardTextStyle = TextStyle(

@@ -50,8 +50,8 @@ final textButtonThemeData = TextButtonThemeData(
   style: ButtonStyle(
     backgroundColor: MaterialStateProperty.resolveWith<Color>(
       (Set<MaterialState> states) => (states.contains(MaterialState.hovered))
-          ? Color(0xFFD9FFFC)
-          : Color(0xFFE8F0F9),
+          ? Color(0xFF9C6CAB)
+          : Color(0xFFD8DBE2),
     ),
     shape: MaterialStateProperty.resolveWith<OutlinedBorder>(
       (Set<MaterialState> states) => RoundedRectangleBorder(

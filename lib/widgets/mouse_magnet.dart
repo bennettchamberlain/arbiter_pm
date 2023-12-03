@@ -61,15 +61,15 @@ class _MouseMagnetState extends State<MouseMagnet> {
                 ),
               ),
               AnimatedPositioned(
-                top: dY,
+                top: dY - 12,
                 left: dX - 20,
                 duration: magnetMouseAnimationDuration,
                 child: AnimatedContainer(
                   duration: magnetMouseAnimationDuration,
-                  height: isOut ? 0 : 15,
-                  width: isOut ? 0 : 15,
+                  height: isOut ? 0 : 18,
+                  width: isOut ? 0 : 18,
                   decoration: BoxDecoration(
-                      image: DecorationImage(image: AssetImage(flutter))),
+                      image: DecorationImage(image: AssetImage(star1))),
                 ),
               ),
             ],

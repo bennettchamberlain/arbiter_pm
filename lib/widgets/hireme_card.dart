@@ -42,7 +42,7 @@ class HireMeCard extends StatelessWidget {
         children: [
           ResponsiveWidget.isLargeScreen(context)
               ? Image.asset(
-                  iconPicEMail,
+                  emailIcon,
                   height: 80,
                   width: 80,
                 )
@@ -63,7 +63,7 @@ class HireMeCard extends StatelessWidget {
               children: [
                 Text(
                   ResponsiveWidget.isSmallScreen(context)
-                      ? 'You hiring?'
+                      ? 'Hiring?'
                       : 'Are you hiring?',
                   style: TextStyle(
                     fontFamily: 'Helvetica Now Display',
@@ -77,7 +77,7 @@ class HireMeCard extends StatelessWidget {
                 ),
                 SizedBox(height: kDefaultPadding * .5),
                 Text(
-                  'Add me to your team.',
+                  'Add Arbiter to your team.',
                   style: theme.textTheme.subtitle1!.copyWith(
                     fontWeight: FontWeight.w400,
                     fontSize: 15,
@@ -93,8 +93,8 @@ class HireMeCard extends StatelessWidget {
               padding: EdgeInsets.only(top: 0),
               child: ATextButton(
                 width: ResponsiveWidget.isSmallScreen(context) ? 180 : 200,
-                imageSrc: iconHandPic,
-                text: 'Hire Me!',
+                imageSrc: hireUsBlk,
+                text: 'Contact Us',
                 press: () => launchEmailUrl(),
               ),
             ),

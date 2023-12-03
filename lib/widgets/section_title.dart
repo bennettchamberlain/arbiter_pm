@@ -44,7 +44,7 @@ class SectionTitle extends StatelessWidget {
               decoration: BoxDecoration(
                 color: theme.brightness == Brightness.light
                     ? kPitchDark
-                    : bodyTextColorDarkTheme,
+                    : whitebackgroundColor,
                 borderRadius: BorderRadius.circular(4),
               ),
               child: DecoratedBox(
@@ -66,7 +66,7 @@ class SectionTitle extends StatelessWidget {
                     letterSpacing: 1,
                     color: theme.brightness == Brightness.light
                         ? kTextColor
-                        : kTextColor,
+                        : whitebackgroundColor,
                   ),
                 ),
                 Text(
@@ -78,7 +78,7 @@ class SectionTitle extends StatelessWidget {
                     letterSpacing: -.7,
                     color: theme.brightness == Brightness.light
                         ? kPitchDark
-                        : bodyTextColorDarkTheme,
+                        : whitebackgroundColor,
                   ),
                 ),
               ],
