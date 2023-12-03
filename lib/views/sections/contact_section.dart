@@ -35,8 +35,8 @@ class ContactSection extends StatelessWidget {
             children: [
               SizedBox(height: kDefaultPadding * 2.5),
               SectionTitle(
-                title: 'Contact Me',
-                subTitle: 'For Project inquiry and information',
+                title: 'Contact Us',
+                subTitle: 'For Confidential Consultation',
                 color: Color(0xFF07E24A),
               ),
               Padding(

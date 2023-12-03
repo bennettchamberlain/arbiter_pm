@@ -8,6 +8,8 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'colors.dart';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 int selectedIndex = 0;
 
 const double kDefaultPadding = 20.0;
@@ -44,6 +46,21 @@ void launchURLs(String _url) async {
   await canLaunchUrl(_uri)
       ? await launchUrl(_uri)
       : throw 'Could not launch $_url';
+}
+
+void sendEmail(String sendEmailTo, String subject, String emailBody) async {
+  // convert uint8list to base 64
+  //final enc = screenshot!;
+
+  final mailAdmin = FirebaseFirestore.instance.collection('mail');
+  await mailAdmin.doc().set({
+    'to': sendEmailTo,
+    'message': {
+      'subject': subject,
+      //'text': emailBody,
+      'html': ''
+    }
+  });
 }
 
 void launchEmailUrl() async {

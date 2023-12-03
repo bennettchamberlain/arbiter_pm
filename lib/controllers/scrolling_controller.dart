@@ -52,10 +52,10 @@ class ScrollingController extends GetxController {
                   : i == 2
                       ? MediaQuery.of(context).size.height * 1.41
                       : i == 3
-                          ? MediaQuery.of(context).size.height * 2.34
+                          ? MediaQuery.of(context).size.height * 2.33
                           : i == 4
                               ? MediaQuery.of(context).size.height * 3.47
-                              : MediaQuery.of(context).size.height * 4.25, //
+                              : MediaQuery.of(context).size.height * 4.24, //
           duration: scrollAnimationDuration,
           curve: scrollAnimationCurve);
 

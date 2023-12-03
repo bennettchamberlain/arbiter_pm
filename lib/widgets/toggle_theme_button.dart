@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controllers/theme_controller.dart';
 import '../constants/colors.dart';
+import '../constants/constants.dart';
 import '../constants/image_paths.dart';
+import '../controllers/scrolling_controller.dart';
 
 class ThemeToggleButton extends GetView<ThemeController> {
   const ThemeToggleButton({Key? key}) : super(key: key);
@@ -10,6 +12,7 @@ class ThemeToggleButton extends GetView<ThemeController> {
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
+    var scrollcontroller = Get.find<ScrollingController>();
 
     return Row(
       children: [
@@ -30,7 +33,9 @@ class ThemeToggleButton extends GetView<ThemeController> {
         ),
         ElevatedButton(
           onPressed: () {
-            Navigator.of(context).pushNamed("/unknown");
+            selectedIndex = 5;
+
+            Obx(scrollcontroller.scrollTo(context, selectedIndex));
           },
           child: Container(
             padding: EdgeInsets.all(5),

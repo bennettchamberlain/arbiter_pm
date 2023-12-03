@@ -26,10 +26,18 @@ class ContactForm extends GetView<FormFieldsController> {
             labelText: 'Your Name',
             hintText: 'Enter your name',
             validator: (v) {
-              if (v!.isEmpty) {
-                return '';
-              }
-              return null;
+               if (v == null || v.isEmpty) {
+                                          return 'Please enter some text';
+                                        } else if (!RegExp(
+                                                r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                            .hasMatch(v)) {
+                                          return 'Please enter a valid email';
+                                        }
+                                        sendEmail(
+                                            v,
+                                            "Thank You for Subscribing to StudioTimes Updates!",
+                                            "null");
+                                        return null;
             },
           ),
           PortfolioTextFormField(
