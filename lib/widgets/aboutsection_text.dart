@@ -15,9 +15,10 @@ class AboutSectionText extends StatelessWidget {
 
     return Padding(
       padding: EdgeInsets.symmetric(
-          horizontal: !ResponsiveWidget.isLargeScreen(context)
-              ? kDefaultPadding * padding
-              : 0),
+        horizontal: !ResponsiveWidget.isLargeScreen(context)
+            ? kDefaultPadding * padding
+            : 0,
+      ),
       child: Text(
         text,
         textAlign: TextAlign.left,

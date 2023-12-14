@@ -26,18 +26,9 @@ class ContactForm extends GetView<FormFieldsController> {
             labelText: 'Your Name',
             hintText: 'Enter your name',
             validator: (v) {
-               if (v == null || v.isEmpty) {
-                                          return 'Please enter some text';
-                                        } else if (!RegExp(
-                                                r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                                            .hasMatch(v)) {
-                                          return 'Please enter a valid email';
-                                        }
-                                        sendEmail(
-                                            v,
-                                            "Thank You for Subscribing to StudioTimes Updates!",
-                                            "null");
-                                        return null;
+              if (v == '') {
+                return 'Please enter your name';
+              }
             },
           ),
           PortfolioTextFormField(
@@ -45,9 +36,15 @@ class ContactForm extends GetView<FormFieldsController> {
             labelText: 'Email Address',
             hintText: 'Enter your email address',
             validator: (v) {
-              if (v!.isEmpty || !RegExp(emailRegExp).hasMatch(v)) {
-                return '';
+              if (v == null || v.isEmpty) {
+                return 'Please enter some text';
+              } else if (!RegExp(
+                      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                  .hasMatch(v)) {
+                return 'Please enter a valid email';
               }
+              sendEmail(v, "Thank You for Subscribing to StudioTimes Updates!",
+                  "null");
               return null;
             },
           ),
@@ -57,7 +54,7 @@ class ContactForm extends GetView<FormFieldsController> {
             hintText: 'Select project type',
             validator: (v) {
               if (v!.isEmpty) {
-                return '';
+                return 'Please enter the nature of your project';
               }
               return null;
             },
@@ -68,7 +65,7 @@ class ContactForm extends GetView<FormFieldsController> {
             hintText: 'Select project budget',
             validator: (v) {
               if (v!.isEmpty) {
-                return ' ';
+                return 'Please enter a budget, a range is fine.';
               }
               return null;
             },
@@ -90,13 +87,12 @@ class ContactForm extends GetView<FormFieldsController> {
               ),
             ),
           ),
-          SizedBox(height: kDefaultPadding * 2),
           Center(
             child: FittedBox(
               child: ATextButton(
                 width: 225,
                 imageSrc: iconContactPic,
-                text: 'Contact Me!',
+                text: 'Get In Touch',
                 press: () {
                   FocusScope.of(context).unfocus();
                   controller.submitFormValues();

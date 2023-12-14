@@ -18,10 +18,18 @@ final TextStyle buttonTextStyle2 = TextStyle(
   color: russianViolet,
 );
 
+final TextStyle buttonTextStyle3 = TextStyle(
+  fontFamily: 'Helvetica Now Display',
+  fontWeight: FontWeight.w500,
+  fontSize: 14,
+  letterSpacing: 1,
+  color: davyGrey,
+);
+
 final TextStyle feedbackCardTextStyle = TextStyle(
   fontFamily: 'Helvetica Now Display',
   fontWeight: FontWeight.w500,
-  fontSize: 22,
+  fontSize: 16,
   letterSpacing: 0,
   color: kTextColor,
 );

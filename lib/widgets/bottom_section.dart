@@ -50,7 +50,7 @@ class BottomSection extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    "Developed in $lovemoji with ",
+                    "Developed with $lovemoji in ",
                     style: theme.textTheme.bodySmall!
                         .copyWith(color: whitebackgroundColor),
                   ),

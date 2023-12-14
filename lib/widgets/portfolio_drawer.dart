@@ -36,7 +36,6 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
     'Services',
     'Our Work',
     'Testimonials',
-    'Contact',
   ];
 
   @override
@@ -67,7 +66,7 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: 250,
+                    height: 255,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -170,17 +169,17 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       SmallSocialCard(
-                        iconSrc: iconPicTwitter,
+                        iconSrc: iconPicWhatsApp,
                         color: Color(0xFFE4FFC7),
                         size: 25,
-                        press: () => launchURLs(twitterLink),
+                        press: () => launchURLs(whatsAppLink),
                       ),
                       SizedBox(width: kDefaultPadding),
                       SmallSocialCard(
-                        iconSrc: iconPicGithub,
+                        iconSrc: iconPicTwitter,
                         color: Color(0xFFE8F0F9),
                         size: 25,
-                        press: () => launchURLs(githubLink),
+                        press: () => launchURLs(twitterLink),
                       ),
                       SizedBox(width: kDefaultPadding),
                     ],

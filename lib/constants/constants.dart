@@ -56,9 +56,10 @@ void sendEmail(String sendEmailTo, String subject, String emailBody) async {
   await mailAdmin.doc().set({
     'to': sendEmailTo,
     'message': {
-      'subject': subject,
+      'subject': "Thank you contacting Arbiter PM ",
       //'text': emailBody,
-      'html': ''
+      'html':
+          '<h2>Our Team will respond to this email within 24 hours. </h2><h6>If you would like to include further comments or files, just reply to this email</h6>'
     }
   });
 }

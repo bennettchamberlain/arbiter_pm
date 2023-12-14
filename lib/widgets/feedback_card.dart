@@ -76,15 +76,15 @@ class _FeedBackCardState extends State<FeedBackCard> {
               ),
               Text(
                 feedBacks[widget.index].review,
-                textAlign: TextAlign.center,
+                textAlign: TextAlign.left,
                 style: feedbackCardTextStyle,
               ),
-              SizedBox(height: kDefaultPadding * 2),
+              SizedBox(height: kDefaultPadding * 0.7),
               Text(
                 feedBacks[widget.index].name,
                 style: feedbackCardNameTextStyle,
               ),
-              SizedBox(height: kDefaultPadding * 1.5),
+              SizedBox(height: kDefaultPadding),
             ],
           ),
         ),

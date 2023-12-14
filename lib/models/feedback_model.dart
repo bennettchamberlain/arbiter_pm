@@ -20,23 +20,23 @@ class Feedback {
 List<Feedback> feedBacks = [
   //TODO: feedbacks
   Feedback(
-    'Richard Mash',
-    feedbackText,
-    feedBacksPic,
+    'Thierry Guetta',
+    feedbackText2,
+    thierry,
     1,
     Color(0xFFFFF3DD),
   ),
   Feedback(
-    'Jennifer Rich',
-    feedbackText,
-    feedBacksPic,
+    'Webbed Feet Radio',
+    feedbackText3,
+    wf,
     2,
     Color(0xFFD9FFFC),
   ),
   Feedback(
-    'Andy Mwangi',
+    'WBI Inc.',
     feedbackText,
-    feedBacksPic,
+    wbi,
     3,
     Color(0xFFFFE0E0),
   ),

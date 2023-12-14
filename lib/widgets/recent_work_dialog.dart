@@ -1,4 +1,5 @@
 import 'package:arbiter_pm/constants/colors.dart';
+import 'package:arbiter_pm/constants/constants.dart';
 import 'package:arbiter_pm/constants/text_styles.dart';
 import 'package:arbiter_pm/models/recentwork_model.dart';
 import 'package:flutter/material.dart';
@@ -40,17 +41,27 @@ class _RecentWorkDialogState extends State<RecentWorkDialog> {
                 child: Container(
                   constraints: BoxConstraints(maxWidth: 700),
                   child: Column(children: [
-                    Text(recentWorksDetails[widget.index].platform),
-                    SizedBox(height: 10),
+                    (recentWorksDetails[widget.index].platform != null)
+                        ? Text(
+                            recentWorksDetails[widget.index].platform!,
+                            style: recentworkcardText1TextStyle,
+                          )
+                        : const Text(""),
+                    const SizedBox(height: 10),
                     Text(
                       recentWorksDetails[widget.index].title,
                       style: recentworkcardText1TextStyle,
                     ),
-                    SizedBox(height: 10),
-                    Image.asset(recentWorksDetails[widget.index].image),
-                    SizedBox(height: 10),
-                    recentWorksDetails[widget.index].description,
-                    SizedBox(height: 20),
+                    const SizedBox(height: 10),
+                    (recentWorksDetails[widget.index].image != null)
+                        ? Image.asset(recentWorksDetails[widget.index].image!)
+                        : const SizedBox(),
+                    const SizedBox(height: 10),
+                    Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                        child: recentWorksDetails[widget.index].description),
+                    const SizedBox(height: kDefaultPadding * 3),
                   ]),
                 ),
               ),

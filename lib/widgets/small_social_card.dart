@@ -45,7 +45,7 @@ class _SmallSocialCardState extends State<SmallSocialCard> {
               horizontal: kDefaultPadding * .3,
             ),
             decoration: BoxDecoration(
-              color: widget.color,
+              color: platinum,
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 if (isHover)
@@ -53,7 +53,7 @@ class _SmallSocialCardState extends State<SmallSocialCard> {
                     offset: Offset(0, 10),
                     blurRadius: 50,
                     color: theme.brightness == Brightness.light
-                        ? kPitchDark.withOpacity(.1)
+                        ? russianViolet.withOpacity(.1)
                         : whitebackgroundColor.withOpacity(.1),
                   ),
               ],

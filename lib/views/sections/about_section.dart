@@ -42,26 +42,26 @@ class AboutSection extends StatelessWidget {
                         Text('About',
                             style: theme.textTheme.headline2!
                                 .copyWith(fontWeight: FontWeight.w900)),
-                        SizedBox(height: 25),
+                        const SizedBox(height: 15),
                         Image.asset(
                             theme.brightness == Brightness.light
-                                ? star2
-                                : star2,
+                                ? starsTogether
+                                : starsTogether,
                             width: 100),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
-                    Expanded(child: AboutSectionText(text: aboutMeTexta)),
-                    SizedBox(
+                    const Expanded(child: AboutSectionText(text: aboutMeTexta)),
+                    const SizedBox(
                       width: 20,
                     ),
-                    ExperienceCountCard(expNum: '10'),
-                    SizedBox(
+                    const ExperienceCountCard(expNum: '10'),
+                    const SizedBox(
                       width: 20,
                     ),
-                    Expanded(child: AboutSectionText(text: aboutMeTextb)),
+                    const Expanded(child: AboutSectionText(text: aboutMeTextb)),
                   ],
                 )
               : Container(
@@ -73,7 +73,10 @@ class AboutSection extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              Image.asset(star2, width: 65),
+                              SizedBox(
+                                width: kDefaultPadding * 4,
+                              ),
+                              Image.asset(starsTogether, width: 65),
                               SizedBox(width: 10),
                               Text('About',
                                   style: theme.textTheme.headline2!
@@ -83,14 +86,13 @@ class AboutSection extends StatelessWidget {
                         ],
                       ),
                       SizedBox(height: kDefaultPadding),
-                      Expanded(
-                        child: AboutSectionText(text: aboutMeTexta),
-                      ),
+                      AboutSectionText(text: aboutMeTexta),
+                      ResponsiveWidget.isSmallScreen(context)
+                          ? SizedBox(height: 50)
+                          : SizedBox(height: 0),
                       ExperienceCountCard(expNum: '10'),
                       SizedBox(height: kDefaultPadding * 3.5),
-                      Expanded(
-                        child: AboutSectionText(text: aboutMeTextb),
-                      ),
+                      AboutSectionText(text: aboutMeTextb),
                     ],
                   ),
                 ),
@@ -100,37 +102,45 @@ class AboutSection extends StatelessWidget {
               ? Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
+                    SizedBox(width: kDefaultPadding * 3),
                     AnOutlinedButton(
-                      width: 200,
+                      width: 210,
                       text: 'Hire Us',
                       imageSrc: hireUs,
-                      press: () => launchEmailUrl(),
+                      press: () {
+                        selectedIndex = 5;
+                        Obx(scrollcontroller.scrollTo(context, selectedIndex));
+                      },
                     ),
                     SizedBox(width: kDefaultPadding * 1 * 4),
                     ATextButton(
-                      width: 250,
-                      text: 'Our Past Work',
+                      width: 220,
+                      text: 'Past Work',
                       imageSrc: ourWork,
                       press: () {
                         selectedIndex = 3;
                         Obx(scrollcontroller.scrollTo(context, selectedIndex));
                       },
                     ),
-                    SizedBox(width: kDefaultPadding * 1 * 5),
+                    SizedBox(width: kDefaultPadding * 1 * 4),
                   ],
                 )
-              : Row(
+              : Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     AnOutlinedButton(
-                      width: 175,
-                      text: 'Hire Us',
-                      imageSrc: hireUs,
-                      press: () => launchEmailUrl(),
-                    ),
-                    SizedBox(width: kDefaultPadding * .4),
+                        width: 220,
+                        text: 'Hire Us',
+                        imageSrc: hireUs,
+                        press: () {
+                          selectedIndex = 5;
+                          Obx(
+                            scrollcontroller.scrollTo(context, selectedIndex),
+                          );
+                        }),
+                    SizedBox(height: kDefaultPadding),
                     ATextButton(
-                      width: 175,
+                      width: 220,
                       text: 'Our Past Work',
                       imageSrc: ourWork,
                       press: () {}, //TODO: CV url

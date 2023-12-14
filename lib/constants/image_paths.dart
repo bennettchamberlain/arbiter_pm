@@ -28,7 +28,7 @@ const String feedBacksPic = 'assets/images/people.png';
 
 const String iconDownloadPic = 'assets/images/download.png';
 const String iconHandPic = 'assets/images/hand.png';
-const String iconContactPic = 'assets/images/contact_icon.png';
+const String iconContactPic = 'assets/images/connect.png';
 
 const String iconPicWhatsApp = 'assets/images/whats_app.png';
 const String iconPicTwitter = 'assets/images/twitter.png';
@@ -59,3 +59,7 @@ const String uiUx = 'assets/images/New Content/services3.png';
 const String cloud = 'assets/images/New Content/services4.png';
 const String bg_img2 = 'assets/images/bg_imag2_new.png';
 const String emailIcon = 'assets/images/New Content/email-icon.png';
+
+const String thierry = 'assets/icons/thierry.png';
+const String wbi = 'assets/icons/wbi.png';
+const String wf = 'assets/icons/wf.png';

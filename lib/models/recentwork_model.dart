@@ -17,7 +17,9 @@ class RecentWork {
 }
 
 class RecentWorkDetails {
-  final String title, image, platform;
+  final String title;
+  final String? platform;
+  final String? image;
   final String? video;
   Widget description;
   final int id;

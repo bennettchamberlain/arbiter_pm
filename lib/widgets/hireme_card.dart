@@ -2,14 +2,18 @@ import 'package:arbiter_pm/constants/constants.dart';
 import 'package:arbiter_pm/widgets/a_text_button.dart';
 import 'package:arbiter_pm/widgets/responsive_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../constants/colors.dart';
 import '../constants/image_paths.dart';
+import '../controllers/scrolling_controller.dart';
 
 class HireMeCard extends StatelessWidget {
   const HireMeCard({
     Key? key,
   }) : super(key: key);
+
+  static var scrollcontroller = Get.find<ScrollingController>();
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +99,10 @@ class HireMeCard extends StatelessWidget {
                 width: ResponsiveWidget.isSmallScreen(context) ? 180 : 200,
                 imageSrc: hireUsBlk,
                 text: 'Contact Us',
-                press: () => launchEmailUrl(),
+                press: () {
+                  selectedIndex = 5;
+                  Obx(scrollcontroller.scrollTo(context, selectedIndex));
+                },
               ),
             ),
           ),

@@ -72,7 +72,7 @@ class _SocialCardState extends State<SocialCard> {
                   ? SizedBox(width: kDefaultPadding)
                   : SizedBox(),
               ResponsiveWidget.isLargeScreen(context)
-                  ? Text(widget.name, style: buttonTextStyle)
+                  ? Text(widget.name, style: buttonTextStyle3)
                   : SizedBox(),
             ],
           ),

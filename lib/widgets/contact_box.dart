@@ -45,19 +45,19 @@ class ContactBox extends StatelessWidget {
             children: [
               SocialCard(
                 iconSrc: iconPicWhatsApp,
-                name: 'Steve Chege',
+                name: 'WhatsApp',
                 color: Color(0xFFD9FFFC),
                 press: () => launchURLs(whatsAppLink),
               ),
               SocialCard(
-                iconSrc: iconPicTwitter,
-                name: 'Steve Chege',
+                iconSrc: emailIcon,
+                name: 'Email',
                 color: Color(0xFFE4FFC7),
-                press: () => launchURLs(twitterLink),
+                press: () => launchEmailUrl(),
               ),
               SocialCard(
                 iconSrc: iconPicGithub,
-                name: 'Steve Chege',
+                name: 'Github',
                 color: Color(0xFFE8F0F9),
                 press: () => launchURLs(githubLink),
               ),

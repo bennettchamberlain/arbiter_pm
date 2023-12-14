@@ -19,8 +19,10 @@ class FeedBackSection extends StatelessWidget {
       child: Column(
         children: [
           SectionTitle(
-            title: 'Feedback Recieved',
-            subTitle: 'Client\'s testimonials that inspired me a lot',
+            title: ResponsiveWidget.isLargeScreen(context)
+                ? 'Client testimonials'
+                : "Testimonials",
+            subTitle: 'Our Feedback',
             color: Color(0xFF00B1FF),
           ),
           SizedBox(height: kDefaultPadding),

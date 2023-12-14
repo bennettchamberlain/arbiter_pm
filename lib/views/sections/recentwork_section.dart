@@ -32,7 +32,9 @@ class RecentWorkSection extends StatelessWidget {
             child: HireMeCard(),
           ),
           SectionTitle(
-            title: 'Client Success Showcase',
+            title: ResponsiveWidget.isLargeScreen(context)
+                ? 'Client Success Showcase'
+                : "Our Clients",
             subTitle: 'Portfolio Highlights',
             color: Color(0xFFFFB100),
           ),
@@ -55,9 +57,7 @@ class RecentWorkSection extends StatelessWidget {
                   child: RecentWorkCard(
                     index: index,
                     press: () {
-                      
                       showDialog(
-                       
                         context: context,
                         builder: (context) {
                           return RecentWorkDialog(index: index);
