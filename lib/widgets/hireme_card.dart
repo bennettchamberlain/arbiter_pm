@@ -42,72 +42,145 @@ class HireMeCard extends StatelessWidget {
           ),
         ],
       ),
-      child: Row(
-        children: [
-          ResponsiveWidget.isLargeScreen(context)
-              ? Image.asset(
-                  emailIcon,
-                  height: 80,
-                  width: 80,
-                )
-              : SizedBox(),
-          ResponsiveWidget.isLargeScreen(context)
-              ? Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-                  child: SizedBox(
-                    height: 80,
-                    child: VerticalDivider(),
-                  ),
-                )
-              : SizedBox(),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+      child: ResponsiveWidget.isLargeScreen(context)
+          ? Row(
               children: [
-                Text(
-                  ResponsiveWidget.isSmallScreen(context)
-                      ? 'Hiring?'
-                      : 'Are you hiring?',
-                  style: TextStyle(
-                    fontFamily: 'Helvetica Now Display',
-                    fontWeight: FontWeight.w700,
-                    fontSize: ResponsiveWidget.isSmallScreen(context) ? 35 : 45,
-                    letterSpacing: -.7,
-                    color: theme.brightness == Brightness.light
-                        ? kPitchDark
-                        : bodyTextColorDarkTheme,
+                ResponsiveWidget.isLargeScreen(context)
+                    ? Image.asset(
+                        emailIcon,
+                        height: 80,
+                        width: 80,
+                      )
+                    : SizedBox(),
+                ResponsiveWidget.isLargeScreen(context)
+                    ? Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: kDefaultPadding),
+                        child: SizedBox(
+                          height: 80,
+                          child: VerticalDivider(),
+                        ),
+                      )
+                    : SizedBox(),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        ResponsiveWidget.isSmallScreen(context)
+                            ? 'Hiring?'
+                            : 'Are you hiring?',
+                        style: TextStyle(
+                          fontFamily: 'Helvetica Now Display',
+                          fontWeight: FontWeight.w700,
+                          fontSize:
+                              ResponsiveWidget.isSmallScreen(context) ? 35 : 45,
+                          letterSpacing: -.7,
+                          color: theme.brightness == Brightness.light
+                              ? kPitchDark
+                              : bodyTextColorDarkTheme,
+                        ),
+                      ),
+                      SizedBox(height: kDefaultPadding * .5),
+                      Text(
+                        'Add Arbiter to your team.',
+                        style: theme.textTheme.subtitle1!.copyWith(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 15,
+                          letterSpacing: 1.5,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                SizedBox(height: kDefaultPadding * .5),
-                Text(
-                  'Add Arbiter to your team.',
-                  style: theme.textTheme.subtitle1!.copyWith(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 15,
-                    letterSpacing: 1.5,
+                SizedBox(
+                  height: 55,
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 0),
+                    child: ATextButton(
+                      width:
+                          ResponsiveWidget.isSmallScreen(context) ? 180 : 200,
+                      imageSrc: hireUsBlk,
+                      text: 'Contact Us',
+                      press: () {
+                        selectedIndex = 5;
+                        Obx(scrollcontroller.scrollTo(context, selectedIndex));
+                      },
+                    ),
+                  ),
+                ),
+              ],
+            )
+          : Row(
+              children: [
+                ResponsiveWidget.isLargeScreen(context)
+                    ? Image.asset(
+                        emailIcon,
+                        height: 80,
+                        width: 80,
+                      )
+                    : SizedBox(),
+                ResponsiveWidget.isLargeScreen(context)
+                    ? Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: kDefaultPadding),
+                        child: SizedBox(
+                          height: 80,
+                          child: VerticalDivider(),
+                        ),
+                      )
+                    : SizedBox(),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        ResponsiveWidget.isSmallScreen(context)
+                            ? 'Hiring?'
+                            : 'Are you hiring?',
+                        style: TextStyle(
+                          fontFamily: 'Helvetica Now Display',
+                          fontWeight: FontWeight.w700,
+                          fontSize:
+                              ResponsiveWidget.isSmallScreen(context) ? 35 : 45,
+                          letterSpacing: -.7,
+                          color: theme.brightness == Brightness.light
+                              ? kPitchDark
+                              : bodyTextColorDarkTheme,
+                        ),
+                      ),
+                      SizedBox(height: kDefaultPadding * .5),
+                      Text(
+                        'Add Arbiter to your team.',
+                        style: theme.textTheme.subtitle1!.copyWith(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 15,
+                          letterSpacing: 1.5,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 55,
+                        child: Padding(
+                          padding: EdgeInsets.only(top: 10),
+                          child: ATextButton(
+                            width: ResponsiveWidget.isSmallScreen(context)
+                                ? 180
+                                : 200,
+                            imageSrc: hireUsBlk,
+                            text: 'Contact Us',
+                            press: () {
+                              selectedIndex = 5;
+                              Obx(scrollcontroller.scrollTo(
+                                  context, selectedIndex));
+                            },
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
-          ),
-          SizedBox(
-            height: 55,
-            child: Padding(
-              padding: EdgeInsets.only(top: 0),
-              child: ATextButton(
-                width: ResponsiveWidget.isSmallScreen(context) ? 180 : 200,
-                imageSrc: hireUsBlk,
-                text: 'Contact Us',
-                press: () {
-                  selectedIndex = 5;
-                  Obx(scrollcontroller.scrollTo(context, selectedIndex));
-                },
-              ),
-            ),
-          ),
-        ],
-      ),
     );
   }
 }

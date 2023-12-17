@@ -37,7 +37,7 @@ class Themes {
 
 final elevatedButtonThemeData = ElevatedButtonThemeData(
   style: ElevatedButton.styleFrom(
-    primary: primaryColor,
+    backgroundColor: primaryColor,
     padding: EdgeInsets.all(kDefaultPadding * .8),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(kDefaultPadding)),

@@ -28,7 +28,7 @@ class LandingSect extends StatelessWidget {
               Padding(
                   padding: EdgeInsets.only(
                       left: ResponsiveWidget.isSmallScreen(context)
-                          ? kDefaultPadding * 3
+                          ? kDefaultPadding * 2
                           : 1),
                   child: LoGo()),
               Spacer(),

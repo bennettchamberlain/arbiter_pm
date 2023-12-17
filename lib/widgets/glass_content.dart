@@ -64,14 +64,14 @@ class GlassContent extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'Helvetica Now Display',
                 fontWeight: FontWeight.w800,
-                fontSize: ResponsiveWidget.isSmallScreen(context) ? 32 : 66,
+                fontSize: ResponsiveWidget.isSmallScreen(context) ? 28 : 66,
                 letterSpacing: 1,
                 color: theme.brightness == Brightness.light
                     ? whitebackgroundColor
                     : kPitchDark,
               ),
             ),
-            SizedBox(height: kDefaultPadding ),
+            SizedBox(height: kDefaultPadding),
             SizedBox(
               height: kDefaultPadding * 2.5,
               child: AnimatedTextKit(

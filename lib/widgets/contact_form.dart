@@ -2,6 +2,7 @@ import 'package:arbiter_pm/widgets/a_text_button.dart';
 import 'package:arbiter_pm/widgets/portfolio_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import '../constants/constants.dart';
 import '../constants/image_paths.dart';
@@ -43,15 +44,17 @@ class ContactForm extends GetView<FormFieldsController> {
                   .hasMatch(v)) {
                 return 'Please enter a valid email';
               }
-              sendEmail(v, "Thank You for Subscribing to StudioTimes Updates!",
-                  "null");
+              sendEmail(v, "Thank you contacting Arbiter PM",
+                  "<h2>Hi ${controller.nameController.text},</h2><h3> Our team will respond to this email within 24 hours.</h3></br></br><p>Type of Project: ${controller.projectTypeController.text}</p></br><p>Project Budget: ${controller.projectBudgetController.text}</p></br><p>Description: ${controller.messageController.text}</p></br><h5>If you would like to include further comments or files, just reply to this email</h5>");
+              sendEmail('bennett@arbiterpm.com', "New Lead",
+                  "<h4>Name: ${controller.nameController.text}</h4></br><h4>Email: ${controller.emailController.text}</h4></br><h4>Type of Project: ${controller.projectTypeController.text}</h4></br><h4>Project Budget: ${controller.projectBudgetController.text}</h4></br><h4>Description: ${controller.messageController.text}</h4><h5>");
               return null;
             },
           ),
           PortfolioTextFormField(
             controller: controller.projectTypeController,
             labelText: 'Project Type',
-            hintText: 'Select project type',
+            hintText: 'Type of Project',
             validator: (v) {
               if (v!.isEmpty) {
                 return 'Please enter the nature of your project';
@@ -83,7 +86,7 @@ class ContactForm extends GetView<FormFieldsController> {
               },
               decoration: InputDecoration(
                 labelText: 'Description',
-                hintText: 'Write some message',
+                hintText: 'Write us a message',
               ),
             ),
           ),

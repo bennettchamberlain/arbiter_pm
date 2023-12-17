@@ -59,7 +59,7 @@ class _DrawerButtonState extends State<DrawerButton> {
               widget.text,
               style: theme.textTheme.button!.copyWith(
                 fontWeight: FontWeight.w300,
-                fontSize: 16,
+                fontSize: 13,
                 letterSpacing: .2,
               ),
             ),

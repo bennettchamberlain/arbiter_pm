@@ -67,13 +67,13 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
               height: cardHight,
               width: ResponsiveWidget.isLargeScreen(context)
                   ? cardWidth * .5
-                  : cardWidth * .4,
+                  : cardWidth * .3,
             ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: kDefaultPadding * .6,
-                  vertical: kDefaultPadding,
+                  vertical: kDefaultPadding / 2,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -92,7 +92,7 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
                         fontFamily: 'Helvetica Now Display',
                         fontWeight: FontWeight.w400,
                         fontSize:
-                            ResponsiveWidget.isSmallScreen(context) ? 25 : 28,
+                            ResponsiveWidget.isSmallScreen(context) ? 18 : 28,
                         letterSpacing: -.3,
                         color: kTextColor,
                       ),

@@ -17,7 +17,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_launcher_icons: ^0.13.1
-  
+  flutter_dotenv: ^5.0.2
+  http: ^0.13.5
   flutter_native_splash: ^2.2.1
   flutter_svg: ^2.0.9
   font_awesome_flutter: ^10.6.0
@@ -25,9 +26,9 @@ dependencies:
   get_storage: ^2.0.3
   glassmorphism_ui: ^0.3.0
   google_fonts: ^4.0.4
-  invoiceninja: ^0.0.11
   url_launcher: ^6.0.6
   flutter_stripe: ^9.6.0
+  flutter_stripe_web: ^4.6.0
 
 dev_dependencies:
   flutter_lints: ^3.0.1
@@ -45,6 +46,7 @@ flutter:
     - assets/images/Primary Logo/
     - assets/images/New Content/
     - assets/icons/
+    - assets/.env
 
   fonts:
     - family: Agustina

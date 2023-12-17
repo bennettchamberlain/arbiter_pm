@@ -73,9 +73,11 @@ class AboutSection extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              SizedBox(
-                                width: kDefaultPadding * 4,
-                              ),
+                              ResponsiveWidget.isLargeScreen(context)
+                                  ? SizedBox(
+                                      width: kDefaultPadding * 4,
+                                    )
+                                  : SizedBox(width: kDefaultPadding * 2),
                               Image.asset(starsTogether, width: 65),
                               SizedBox(width: 10),
                               Text('About',

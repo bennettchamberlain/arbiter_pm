@@ -21,7 +21,7 @@ class FormFieldsController extends GetxController {
       formKey.currentState!.save();
       Get.snackbar(
         'Submitted',
-        'Thanks for your feedback, will get back to you shortly.',
+        'Thanks for reaching out, we will get back to you within 24 hours.',
         maxWidth: 450,
         duration: snackbarDuration,
         margin: EdgeInsets.only(top: kDefaultPadding),

@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import '../../controllers/scrolling_controller.dart';
 import '../../widgets/responsive_widget.dart';
 import '../../widgets/section_title.dart';
+import '../../widgets/segmented_button.dart';
 import '../../widgets/service_card.dart';
 
 class ServiceSection extends GetView<ScrollingController> {
@@ -34,27 +35,9 @@ class ServiceSection extends GetView<ScrollingController> {
                         : kDefaultPadding * 2,
                     bottom: kDefaultPadding * 5,
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: List.generate(
-                      services.length,
-                      (index) => ServiceCard(index: index),
-                    ),
-                  ),
-                )
-              : SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  physics: BouncingScrollPhysics(
-                    parent: AlwaysScrollableScrollPhysics(),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: List.generate(
-                      services.length,
-                      (index) => ServiceCard(index: index),
-                    ),
-                  ),
-                ),
+                  child: SegmentedButtonWithAnimatedContainer())
+              : 
+                   SegmentedButtonWithAnimatedContainer(),
           SizedBox(height: kDefaultPadding * 2),
         ],
       ),

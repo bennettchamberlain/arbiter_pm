@@ -20,7 +20,7 @@ class FeedBackSection extends StatelessWidget {
         children: [
           SectionTitle(
             title: ResponsiveWidget.isLargeScreen(context)
-                ? 'Client testimonials'
+                ? 'Client Testimonials'
                 : "Testimonials",
             subTitle: 'Our Feedback',
             color: Color(0xFF00B1FF),

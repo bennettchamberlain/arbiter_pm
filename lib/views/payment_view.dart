@@ -1,21 +1,69 @@
-import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:arbiter_pm/constants/image_paths.dart';
+import 'package:flutter/material.dart';
 
-class PaymentService {
-  final int amount;
-  final String url;
+import '../widgets/segmented_button.dart';
 
-  PaymentService({this.amount = 10, this.url = ''});
+class PaymentView extends StatefulWidget {
+  const PaymentView({Key? key}) : super(key: key);
 
-  static init() {
-    Stripe.publishableKey =
-        'pk_live_51HRzgDHJwKTrrXWmGQy4Klr0Be9osKkewt1IYFzNB28odhCCAF5VUEdPpYehdzVUQMtyJcsMVtgzHgraimNdPs3h00kpix7ZGe';
+  @override
+  State<PaymentView> createState() => _PaymentViewState();
+}
+
+class _PaymentViewState extends State<PaymentView> {
+  String _email = '';
+
+  void _findClient() async {
+    try {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text("Client Not Found")));
+    } catch (e) {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text("Client Not Found")));
+
+      print(e);
+    }
   }
 
-  Future<PaymentMethod?> createPaymentMethod() async {
-    print('the amount to be charged is $amount');
-
-    //PaymentMethod paymentMethod = await Stripe.buildWebCard
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Pay an Invoice")),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Card(
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      floatingLabelStyle: TextStyle(color: Colors.white),
+                      labelStyle: TextStyle(color: Colors.white),
+                      labelText: 'Email',
+                      suffixIcon: Icon(Icons.email),
+                    ),
+                    onChanged: (value) => setState(() => _email = value),
+                    keyboardType: TextInputType.emailAddress,
+                  ),
+                  const SizedBox(height: 16),
+                  OutlinedButton(
+                    onPressed: (_email.isNotEmpty != null)
+                        ? () => _findClient()
+                        : null,
+                    child: const Text('Find Client'),
+                  ),
+                  const SizedBox(height: 16),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
   }
-
-  Future<void> processPayment(PaymentMethod paymentMethod) async {}
 }

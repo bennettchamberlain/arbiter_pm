@@ -1,10 +1,10 @@
+import 'package:arbiter_pm/views/payment_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../bindings/bindings.dart';
 import '../views/invoice_view_.dart';
 import '../views/home_view.dart';
-import '../views/storefront_view_.dart';
 import '../views/unknown_page.dart';
 
 part 'app_routes.dart';
@@ -29,12 +29,12 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.INVOICE,
-      page: () => InvoiceView(),
+      page: () => PaymentView(),
       binding: Binding(),
     ),
     GetPage(
       name: _Paths.ADMIN,
-      page: () => StorefrontView(),
+      page: () => Placeholder(),
       binding: Binding(),
     )
   ];

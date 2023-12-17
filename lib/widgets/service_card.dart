@@ -27,7 +27,11 @@ class _ServiceCardState extends State<ServiceCard> {
           horizontal:
               ResponsiveWidget.isLargeScreen(context) ? 0 : kDefaultPadding),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          setState(() {
+            serviceIndex = widget.index;
+          });
+        },
         onHover: (v) {
           setState(() {
             isHover = v;
@@ -86,6 +90,12 @@ class _ServiceCardState extends State<ServiceCard> {
                 services[widget.index].title,
                 style: servicecardTextStyle,
               ),
+              (serviceIndex != widget.index)
+                  ? SizedBox(height: 15)
+                  : Divider(
+                      thickness: 5,
+                      color: Colors.red,
+                    )
             ],
           ),
         ),

@@ -10,6 +10,10 @@ import 'colors.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+double value = 0;
+
+int serviceIndex = 0;
+
 int selectedIndex = 0;
 
 const double kDefaultPadding = 20.0;
@@ -56,10 +60,9 @@ void sendEmail(String sendEmailTo, String subject, String emailBody) async {
   await mailAdmin.doc().set({
     'to': sendEmailTo,
     'message': {
-      'subject': "Thank you contacting Arbiter PM ",
+      'subject': subject,
       //'text': emailBody,
-      'html':
-          '<h2>Our Team will respond to this email within 24 hours. </h2><h6>If you would like to include further comments or files, just reply to this email</h6>'
+      'html': emailBody
     }
   });
 }

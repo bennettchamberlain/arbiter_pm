@@ -29,7 +29,7 @@ const List<String> titlesText = [
 ];
 
 const String aboutMeTexta =
-    "Elevate your business with Arbiter - We work hard day in and day out, to help brands build exceptional products and services, and discover how powerful they can be.";
+    "Elevate your business with Arbiter - We work hard day in and day out to help brands build exceptional products and services, and discover how powerful they can be.";
 const String aboutMeTextb =
     "We're passionate people with an “X” factor, uniting who we are with what we do. We bring our expertise and hustle inside the walls of Arbiter and beyond.";
 

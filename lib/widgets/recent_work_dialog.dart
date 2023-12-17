@@ -44,13 +44,13 @@ class _RecentWorkDialogState extends State<RecentWorkDialog> {
                     (recentWorksDetails[widget.index].platform != null)
                         ? Text(
                             recentWorksDetails[widget.index].platform!,
-                            style: recentworkcardText1TextStyle,
+                            style: recentworkcardText2TextStyle,
                           )
                         : const Text(""),
                     const SizedBox(height: 10),
                     Text(
                       recentWorksDetails[widget.index].title,
-                      style: recentworkcardText1TextStyle,
+                      style: recentworkcardText4TextStyle,
                     ),
                     const SizedBox(height: 10),
                     (recentWorksDetails[widget.index].image != null)

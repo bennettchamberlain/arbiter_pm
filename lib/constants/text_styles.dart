@@ -58,10 +58,27 @@ final TextStyle recentworkcardText1TextStyle = TextStyle(
   color: kTextColor,
 );
 
+final TextStyle recentworkcardText2TextStyle = TextStyle(
+  fontFamily: 'Helvetica Now Display',
+  fontWeight: FontWeight.w400,
+  fontSize: 25,
+  letterSpacing: 2,
+  color: kTextColor,
+);
+
 final TextStyle recentworkcardText3TextStyle = TextStyle(
   fontFamily: 'Helvetica Now Display',
   fontWeight: FontWeight.w500,
   fontSize: 14,
+  letterSpacing: .2,
+  color: kTextColor,
+  decoration: TextDecoration.underline,
+);
+
+final TextStyle recentworkcardText4TextStyle = TextStyle(
+  fontFamily: 'Helvetica Now Display',
+  fontWeight: FontWeight.w500,
+  fontSize: 35,
   letterSpacing: .2,
   color: kTextColor,
   decoration: TextDecoration.underline,

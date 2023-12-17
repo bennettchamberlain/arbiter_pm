@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:arbiter_pm/widgets/drawer_button.dart';
+import 'package:arbiter_pm/widgets/landing_carousel.dart';
 import 'package:arbiter_pm/widgets/responsive_widget.dart';
 import 'package:arbiter_pm/widgets/small_social_card.dart';
 import 'package:flutter/material.dart' hide DrawerButton;
@@ -26,9 +27,9 @@ class PortfolioDrawer extends StatefulWidget {
 }
 
 class _PortfolioDrawerState extends State<PortfolioDrawer> {
-  double value = 0;
   static var scrollcontroller = Get.find<ScrollingController>();
   static var themeController = Get.find<ThemeController>();
+ 
 
   List<String> menuItems = [
     'Home',
@@ -70,6 +71,7 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        SizedBox(height: kDefaultPadding),
                         Align(
                           alignment: Alignment.center,
                           child: Column(
@@ -86,18 +88,19 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                                         borderRadius:
                                             BorderRadius.circular(16))),
                                 onPressed: () {
-                                  Navigator.of(context).pushNamed("/pay");
+                                  Navigator.of(context).pushNamed("/invoice");
                                 },
                                 child: Container(
                                   padding: EdgeInsets.all(5),
                                   child: Text(
                                     "PAY INVOICE",
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.w900),
+                                    style: TextStyle(
+                                        fontSize: 11,
+                                        fontWeight: FontWeight.w900),
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 10),
+                              SizedBox(height: kDefaultPadding),
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                     shape: RoundedRectangleBorder(
@@ -109,14 +112,17 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                                         borderRadius:
                                             BorderRadius.circular(16))),
                                 onPressed: () {
-                                  launchEmailUrl();
+                                  selectedIndex = 5;
+                                  Obx(scrollcontroller.scrollToSmallScreen(
+                                      context, selectedIndex));
                                 },
                                 child: Container(
                                   padding: EdgeInsets.all(5),
                                   child: Text(
                                     "CONTACT US",
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.w900),
+                                    style: TextStyle(
+                                        fontSize: 11,
+                                        fontWeight: FontWeight.w900),
                                   ),
                                 ),
                               ),
@@ -221,6 +227,7 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                   },
                 )
               : widget.child,
+          
         ],
       ),
     );

@@ -18,7 +18,7 @@ class ThemeToggleButton extends GetView<ThemeController> {
       children: [
         ElevatedButton(
           onPressed: () {
-            Navigator.of(context).pushNamed("/pay");
+            Navigator.of(context).pushNamed("/invoice");
           },
           child: Container(
             padding: EdgeInsets.all(5),
