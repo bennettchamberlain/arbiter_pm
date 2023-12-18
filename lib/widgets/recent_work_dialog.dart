@@ -42,15 +42,21 @@ class _RecentWorkDialogState extends State<RecentWorkDialog> {
                   constraints: BoxConstraints(maxWidth: 700),
                   child: Column(children: [
                     (recentWorksDetails[widget.index].platform != null)
-                        ? Text(
-                            recentWorksDetails[widget.index].platform!,
-                            style: recentworkcardText2TextStyle,
+                        ? Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              recentWorksDetails[widget.index].platform!,
+                              style: recentworkcardText2TextStyle,
+                            ),
                           )
                         : const Text(""),
                     const SizedBox(height: 10),
-                    Text(
-                      recentWorksDetails[widget.index].title,
-                      style: recentworkcardText4TextStyle,
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        recentWorksDetails[widget.index].title,
+                        style: recentworkcardText4TextStyle,
+                      ),
                     ),
                     const SizedBox(height: 10),
                     (recentWorksDetails[widget.index].image != null)

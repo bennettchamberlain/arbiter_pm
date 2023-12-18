@@ -244,7 +244,7 @@ class _PaymentViewState extends State<PaymentView> {
       total += newamount;
     });
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.only(right: 16.0, top: 16, bottom: 16),
       child: Text("\$${newamount.toStringAsFixed(2)}"),
     );
   }
@@ -252,7 +252,7 @@ class _PaymentViewState extends State<PaymentView> {
   Widget itemsNumber(String amount) {
     if (amount == "null") {
       return Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.only(left: 16, top: 16, bottom: 16),
         child: Text("1"),
       );
     } else {
