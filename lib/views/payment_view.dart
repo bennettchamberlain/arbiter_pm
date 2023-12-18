@@ -213,7 +213,9 @@ class _PaymentViewState extends State<PaymentView> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 36.0),
                         child: Text(
-                            "\$${(invoices[index]['total']).toStringAsFixed(2)}"),
+                          "\$${(invoices[index]['total']).toStringAsFixed(2)}",
+                          style: TextStyle(fontSize: 18),
+                        ),
                       ),
                     ],
                   ),

@@ -26,13 +26,13 @@ class GlassContent extends StatelessWidget {
     );
 
     return GlassContainer(
-      height: 405,
+      height: 425,
       width: _.width * .85,
       shadowStrength: 1,
       opacity: .001,
       border: Border.all(
-        color: whitebackgroundColor.withOpacity(.5),
-        width: .4,
+        color: Colors.white.withOpacity(.9),
+        width: 2,
       ),
       borderRadius: BorderRadius.circular(10),
       child: Padding(
