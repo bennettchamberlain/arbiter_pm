@@ -10,6 +10,8 @@ import 'colors.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+double total = 0;
+
 double value = 0;
 
 int serviceIndex = 0;

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../bindings/bindings.dart';
+import '../views/admin_view.dart';
 import '../views/invoice_view_.dart';
 import '../views/home_view.dart';
 import '../views/unknown_page.dart';
@@ -34,7 +35,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.ADMIN,
-      page: () => Placeholder(),
+      page: () => AdminView(),
       binding: Binding(),
     )
   ];

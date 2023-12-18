@@ -14,5 +14,5 @@ abstract class _Paths {
   static const HOME = '/';
   static const UNKNOWN = '/unknown';
   static const INVOICE = '/invoice';
-  static const ADMIN = '/admin';
+  static const ADMIN = '/reports';
 }

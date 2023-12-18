@@ -45,19 +45,32 @@ class BottomSection extends StatelessWidget {
             ),
             Align(
               alignment: Alignment.bottomCenter,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
-                    "Developed with $lovemoji in ",
-                    style: theme.textTheme.bodySmall!
-                        .copyWith(color: whitebackgroundColor),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        "From Scratch with $lovemoji in ",
+                        style: theme.textTheme.bodySmall!
+                            .copyWith(color: whitebackgroundColor),
+                      ),
+                      InkWell(
+                        onTap: () => launchURLs(gitHubRepoLink),
+                        child: Image.asset(flutter, height: 16),
+                      ),
+                    ],
                   ),
-                  InkWell(
-                    onTap: () => launchURLs(gitHubRepoLink),
-                    child: Image.asset(flutter, height: 16),
-                  )
+                  SizedBox(height: 20),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushNamed("/reports");
+                      },
+                      child: Text("Admin",
+                          style:
+                              TextStyle(decoration: TextDecoration.underline)))
                 ],
               ),
             ),
