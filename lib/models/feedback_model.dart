@@ -24,20 +24,20 @@ List<Feedback> feedBacks = [
     feedbackText2,
     thierry,
     1,
-    Color(0xFFFFF3DD),
+    const Color(0xFFFFF3DD),
   ),
   Feedback(
     'Webbed Feet Radio',
     feedbackText3,
     wf,
     2,
-    Color(0xFFD9FFFC),
+    const Color(0xFFD9FFFC),
   ),
   Feedback(
     'WBI Inc.',
     feedbackText,
     wbi,
     3,
-    Color(0xFFFFE0E0),
+    const Color(0xFFFFE0E0),
   ),
 ];

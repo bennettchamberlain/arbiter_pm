@@ -20,19 +20,19 @@ int selectedIndex = 0;
 
 const double kDefaultPadding = 20.0;
 
-final Duration hoverAnimationDuration = Duration(milliseconds: 200);
+const Duration hoverAnimationDuration =  Duration(milliseconds: 200);
 
-final Duration toggleButtonAnimationDuration = Duration(milliseconds: 200);
+const Duration toggleButtonAnimationDuration = Duration(milliseconds: 200);
 
-final Duration magnetMouseAnimationDuration = Duration(milliseconds: 400);
+const Duration magnetMouseAnimationDuration = Duration(milliseconds: 400);
 
-final Duration drawerAnimationDuration = Duration(milliseconds: 500);
+const Duration drawerAnimationDuration = Duration(milliseconds: 500);
 
-final Duration scrollAnimationDuration = Duration(seconds: 1);
+const Duration scrollAnimationDuration = Duration(seconds: 1);
 
-final Duration snackbarDuration = Duration(seconds: 5);
+const Duration snackbarDuration = Duration(seconds: 5);
 
-final Duration carouselAnimDuration = Duration(milliseconds: 600);
+const Duration carouselAnimDuration = Duration(milliseconds: 600);
 
 const Curve slidingAnimationCurve = Curves.fastLinearToSlowEaseIn;
 
@@ -46,12 +46,12 @@ const Curve buttonAnimationCurve = Curves.fastLinearToSlowEaseIn;
 
 const Curve scrollAnimationCurve = Curves.easeInOut;
 
-void launchURLs(String _url) async {
-  final Uri _uri = Uri.parse(_url);
+void launchURLs(String url) async {
+  final Uri uri = Uri.parse(url);
 
-  await canLaunchUrl(_uri)
-      ? await launchUrl(_uri)
-      : throw 'Could not launch $_url';
+  await canLaunchUrl(uri)
+      ? await launchUrl(uri)
+      : throw 'Could not launch $url';
 }
 
 void sendEmail(String sendEmailTo, String subject, String emailBody) async {
@@ -81,18 +81,18 @@ void launchEmailUrl() async {
 }
 
 final kDefaultShadow = BoxShadow(
-  offset: Offset(0, 10),
+  offset: const Offset(0, 10),
   blurRadius: 50,
-  color: Color(0xFF0700B1).withOpacity(.1),
+  color: const Color(0xFF0700B1).withOpacity(.1),
 );
 
 final kDefaultCardShadow = BoxShadow(
-  offset: Offset(0, 20),
+  offset: const Offset(0, 20),
   blurRadius: 50,
   color: Colors.black.withOpacity(.1),
 );
 
-final kDefaultOutlineInputBorder = OutlineInputBorder(
+const kDefaultOutlineInputBorder = OutlineInputBorder(
   borderSide: BorderSide(
     color: kDarker,
     width: 1.5,

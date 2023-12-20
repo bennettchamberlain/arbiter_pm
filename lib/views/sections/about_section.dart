@@ -25,14 +25,14 @@ class AboutSection extends StatelessWidget {
       constraints: BoxConstraints(
         maxWidth: _.width * .8,
       ),
-      margin: EdgeInsets.symmetric(vertical: kDefaultPadding * 2),
+      margin: const EdgeInsets.symmetric(vertical: kDefaultPadding * 2),
       padding: EdgeInsets.symmetric(
           horizontal: ResponsiveWidget.isLargeScreen(context)
               ? kDefaultPadding * 10
               : kDefaultPadding * 1.5),
       child: Column(
         children: [
-          SizedBox(height: kDefaultPadding * 2),
+          const SizedBox(height: kDefaultPadding * 2),
           ResponsiveWidget.isLargeScreen(context)
               ? Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -40,7 +40,7 @@ class AboutSection extends StatelessWidget {
                     Column(
                       children: [
                         Text('About',
-                            style: theme.textTheme.headline2!
+                            style: theme.textTheme.displayMedium!
                                 .copyWith(fontWeight: FontWeight.w900)),
                         const SizedBox(height: 15),
                         Image.asset(
@@ -64,7 +64,7 @@ class AboutSection extends StatelessWidget {
                     const Expanded(child: AboutSectionText(text: aboutMeTextb)),
                   ],
                 )
-              : Container(
+              : SizedBox(
                   height: _.height * 1,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -74,47 +74,48 @@ class AboutSection extends StatelessWidget {
                           Row(
                             children: [
                               ResponsiveWidget.isLargeScreen(context)
-                                  ? SizedBox(
+                                  ? const SizedBox(
                                       width: kDefaultPadding * 4,
                                     )
-                                  : SizedBox(width: kDefaultPadding * 2),
+                                  : const SizedBox(width: kDefaultPadding * 2),
                               Image.asset(starsTogether, width: 65),
-                              SizedBox(width: 10),
+                              const SizedBox(width: 10),
                               Text('About',
-                                  style: theme.textTheme.headline2!
+                                  style: theme.textTheme.displayMedium!
                                       .copyWith(fontWeight: FontWeight.w900)),
                             ],
                           ),
                         ],
                       ),
-                      SizedBox(height: kDefaultPadding),
-                      AboutSectionText(text: aboutMeTexta),
+                      const SizedBox(height: kDefaultPadding),
+                      const AboutSectionText(text: aboutMeTexta),
                       ResponsiveWidget.isSmallScreen(context)
-                          ? SizedBox(height: 50)
-                          : SizedBox(height: 0),
-                      ExperienceCountCard(expNum: '10'),
-                      SizedBox(height: kDefaultPadding * 3.5),
-                      AboutSectionText(text: aboutMeTextb),
+                          ? const SizedBox(height: 50)
+                          : const SizedBox(height: 0),
+                      const ExperienceCountCard(expNum: '10'),
+                      const SizedBox(height: kDefaultPadding * 3.5),
+                      const AboutSectionText(text: aboutMeTextb),
                     ],
                   ),
                 ),
-          SizedBox(height: kDefaultPadding / 5),
-          SizedBox(height: 70),
+          const SizedBox(height: kDefaultPadding / 5),
+          const SizedBox(height: 70),
           ResponsiveWidget.isLargeScreen(context)
               ? Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    SizedBox(width: kDefaultPadding * 3),
+                    const SizedBox(width: kDefaultPadding * 3),
                     AnOutlinedButton(
                       width: 210,
-                      text: 'Hire Us',
+                      text: 'Contact Us',
                       imageSrc: hireUs,
                       press: () {
                         selectedIndex = 5;
+
                         Obx(scrollcontroller.scrollTo(context, selectedIndex));
                       },
                     ),
-                    SizedBox(width: kDefaultPadding * 1 * 4),
+                    const SizedBox(width: kDefaultPadding * 1 * 4),
                     ATextButton(
                       width: 220,
                       text: 'Past Work',
@@ -124,7 +125,7 @@ class AboutSection extends StatelessWidget {
                         Obx(scrollcontroller.scrollTo(context, selectedIndex));
                       },
                     ),
-                    SizedBox(width: kDefaultPadding * 1 * 4),
+                    const SizedBox(width: kDefaultPadding * 1 * 4),
                   ],
                 )
               : Column(
@@ -132,7 +133,7 @@ class AboutSection extends StatelessWidget {
                   children: [
                     AnOutlinedButton(
                         width: 220,
-                        text: 'Hire Us',
+                        text: 'Contact Us',
                         imageSrc: hireUs,
                         press: () {
                           selectedIndex = 5;
@@ -140,12 +141,17 @@ class AboutSection extends StatelessWidget {
                             scrollcontroller.scrollTo(context, selectedIndex),
                           );
                         }),
-                    SizedBox(height: kDefaultPadding),
+                    const SizedBox(height: kDefaultPadding),
                     ATextButton(
                       width: 220,
                       text: 'Our Past Work',
                       imageSrc: ourWork,
-                      press: () {}, //TODO: CV url
+                      press: () {
+                        selectedIndex = 4;
+                        Obx(
+                          scrollcontroller.scrollTo(context, selectedIndex),
+                        );
+                      }, //TODO: CV url
                     ),
                   ],
                 ),

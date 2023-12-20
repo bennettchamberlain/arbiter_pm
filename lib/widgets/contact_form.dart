@@ -2,11 +2,8 @@ import 'package:arbiter_pm/widgets/a_text_button.dart';
 import 'package:arbiter_pm/widgets/portfolio_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
-
 import '../constants/constants.dart';
 import '../constants/image_paths.dart';
-import '../constants/text_logs.dart';
 import '../controllers/form_fields_controller.dart';
 
 class ContactForm extends GetView<FormFieldsController> {
@@ -84,7 +81,7 @@ class ContactForm extends GetView<FormFieldsController> {
                 }
                 return null;
               },
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Description',
                 hintText: 'Write us a message',
               ),

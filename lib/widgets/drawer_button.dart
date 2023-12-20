@@ -4,7 +4,7 @@ import '../constants/colors.dart';
 import '../constants/constants.dart';
 
 class DrawerButton extends StatefulWidget {
-  DrawerButton({
+  const DrawerButton({
     Key? key,
     required this.text,
     required this.pressed,
@@ -45,7 +45,7 @@ class _DrawerButtonState extends State<DrawerButton> {
         splashColor: kPink,
         child: AnimatedContainer(
           duration: hoverAnimationDuration,
-          constraints: BoxConstraints(maxWidth: 75),
+          constraints: const BoxConstraints(maxWidth: 75),
           padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * .5),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(3),
@@ -57,7 +57,7 @@ class _DrawerButtonState extends State<DrawerButton> {
           child: Center(
             child: Text(
               widget.text,
-              style: theme.textTheme.button!.copyWith(
+              style: theme.textTheme.labelLarge!.copyWith(
                 fontWeight: FontWeight.w300,
                 fontSize: 13,
                 letterSpacing: .2,

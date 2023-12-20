@@ -54,7 +54,7 @@ class _MouseMagnetState extends State<MouseMagnet> {
                   dX = e.localPosition.dx;
                   dY = e.localPosition.dy;
                 }),
-                child: Container(
+                child: SizedBox(
                   height: _.height,
                   width: _.width,
                   child: widget.body,
@@ -68,7 +68,7 @@ class _MouseMagnetState extends State<MouseMagnet> {
                   duration: magnetMouseAnimationDuration,
                   height: isOut ? 0 : 18,
                   width: isOut ? 0 : 18,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       image: DecorationImage(image: AssetImage(star1))),
                 ),
               ),

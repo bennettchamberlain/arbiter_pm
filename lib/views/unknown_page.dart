@@ -18,7 +18,7 @@ class UnknownPage extends StatelessWidget {
             svg404ErrorImage,
             width: 350,
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

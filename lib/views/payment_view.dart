@@ -1,12 +1,8 @@
 import 'package:arbiter_pm/constants/colors.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import '../constants/constants.dart';
-import '../models/invoice_model.dart';
-
 class PaymentView extends StatefulWidget {
   const PaymentView({Key? key}) : super(key: key);
 
@@ -32,11 +28,11 @@ class _PaymentViewState extends State<PaymentView> {
       invoiceRef.get().then((query) {
         final invoiceList = query.docs;
 
-        if (invoiceList.length == 0) {
+        if (invoiceList.isEmpty) {
           ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text("Client Not Found")));
+              .showSnackBar(const SnackBar(content: Text("Client Not Found")));
         } else {
-          print(query.docs[0]);
+          //print(query.docs[0]);
           query.docs.forEach(
             (element) {
               invoices.add(element.data());
@@ -49,21 +45,21 @@ class _PaymentViewState extends State<PaymentView> {
         }
       }, onError: (e) {});
     } catch (e) {
-      print(e);
+      //print(e);
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Pay an Invoice")),
+      appBar: AppBar(title: const Text("Pay an Invoice")),
       body: SingleChildScrollView(
         child: Align(
           alignment: Alignment.topCenter,
           child: Column(
             children: [
               Container(
-                constraints: BoxConstraints(maxWidth: 600),
+                constraints: const BoxConstraints(maxWidth: 600),
                 child: Padding(
                   padding: const EdgeInsets.all(16),
                   child: Card(
@@ -101,7 +97,7 @@ class _PaymentViewState extends State<PaymentView> {
                 ),
               ),
               (invoice != true)
-                  ? SizedBox()
+                  ? const SizedBox()
                   : Column(children: showStripeInvoices())
             ],
           ),
@@ -117,7 +113,7 @@ class _PaymentViewState extends State<PaymentView> {
         child: Card(
             elevation: 200,
             child: Container(
-              constraints: BoxConstraints(maxWidth: 800),
+              constraints: const BoxConstraints(maxWidth: 800),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -126,16 +122,16 @@ class _PaymentViewState extends State<PaymentView> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Invoice number: ",
+                        const Text("Invoice number: ",
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.w800)),
-                        Text("000${index + 1}", style: TextStyle(fontSize: 18)),
+                        Text("000${index + 1}", style: const TextStyle(fontSize: 18)),
                       ],
                     ),
                   ),
-                  SizedBox(height: 16),
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
+                  const SizedBox(height: 16),
+                  const Padding(
+                    padding: EdgeInsets.all(16.0),
                     child: Text("Items: ",
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.w800)),
@@ -160,7 +156,7 @@ class _PaymentViewState extends State<PaymentView> {
                       ],
                     ),
                   ),
-                  Divider(),
+                  const Divider(),
                   Column(
                     children: [
                       Padding(
@@ -206,15 +202,15 @@ class _PaymentViewState extends State<PaymentView> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 32.0),
                         child: Text("Total:"),
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 36.0),
                         child: Text(
                           "\$${(invoices[index]['total']).toStringAsFixed(2)}",
-                          style: TextStyle(fontSize: 18),
+                          style: const TextStyle(fontSize: 18),
                         ),
                       ),
                     ],
@@ -251,14 +247,14 @@ class _PaymentViewState extends State<PaymentView> {
 
   Widget itemsNumber(String amount) {
     if (amount == "null") {
-      return Padding(
-        padding: const EdgeInsets.only(left: 16, top: 16, bottom: 16),
+      return const Padding(
+        padding: EdgeInsets.only(left: 16, top: 16, bottom: 16),
         child: Text("1"),
       );
     } else {
       return Padding(
         padding: const EdgeInsets.all(16),
-        child: Text("$amount"),
+        child: Text(amount),
       );
     }
   }

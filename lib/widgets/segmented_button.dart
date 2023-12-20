@@ -1,9 +1,6 @@
 import 'dart:math';
-
 import 'package:arbiter_pm/constants/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/animation.dart';
-
 import '../constants/constants.dart';
 import '../constants/text_styles.dart';
 import '../models/service_model.dart';
@@ -80,14 +77,14 @@ class _SegmentedButtonWithAnimatedContainerState
                             duration: hoverAnimationDuration,
                             width: 256,
                             height: 226,
-                            margin: EdgeInsets.symmetric(
+                            margin: const EdgeInsets.symmetric(
                                 vertical: kDefaultPadding * 2),
                             decoration: BoxDecoration(
                               color: services[service].color,
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
-                                  offset: Offset(0, 10),
+                                  offset: const Offset(0, 10),
                                   blurRadius: 50,
                                   color: theme.brightness == Brightness.light
                                       ? kPitchDark.withOpacity(.2)
@@ -103,15 +100,15 @@ class _SegmentedButtonWithAnimatedContainerState
                                   width: 120,
                                   height: 120,
                                   padding:
-                                      EdgeInsets.all(kDefaultPadding * 1.5),
+                                      const EdgeInsets.all(kDefaultPadding * 1.5),
                                   decoration: BoxDecoration(
                                     color: theme.brightness == Brightness.light
                                         ? whitebackgroundColor
-                                        : Color.fromARGB(255, 188, 198, 219),
+                                        : const Color.fromARGB(255, 188, 198, 219),
                                     shape: BoxShape.circle,
                                     boxShadow: [
                                       BoxShadow(
-                                        offset: Offset(0, 20),
+                                        offset: const Offset(0, 20),
                                         blurRadius: 30,
                                         color: Colors.black.withOpacity(.3),
                                       )
@@ -122,32 +119,32 @@ class _SegmentedButtonWithAnimatedContainerState
                                     fit: BoxFit.fill,
                                   ),
                                 ),
-                                SizedBox(height: kDefaultPadding),
+                                const SizedBox(height: kDefaultPadding),
                                 Text(
                                   services[service].title,
                                   style: servicecardTextStyle,
                                 ),
                                 (serviceIndex != service)
-                                    ? SizedBox(height: 5)
+                                    ? const SizedBox(height: 5)
                                     : AnimatedContainer(
                                         curve: Curves.fastOutSlowIn,
                                         width: (service == serviceIndex)
                                             ? double.infinity
                                             : 0,
-                                        duration: Duration(milliseconds: 500),
-                                        margin: EdgeInsets.symmetric(
+                                        duration: const Duration(milliseconds: 500),
+                                        margin: const EdgeInsets.symmetric(
                                             horizontal: 40),
                                         height: 5,
                                         decoration: BoxDecoration(
                                             boxShadow: [
                                               BoxShadow(
-                                                offset: Offset(2, 3),
+                                                offset: const Offset(2, 3),
                                                 blurRadius: 5,
                                                 color: Colors.black
                                                     .withOpacity(.2),
                                               )
                                             ],
-                                            borderRadius: BorderRadius.all(
+                                            borderRadius: const BorderRadius.all(
                                               Radius.circular(5),
                                             ),
                                             color: Colors.red),
@@ -185,11 +182,11 @@ class _SegmentedButtonWithAnimatedContainerState
                           services[serviceIndex].description.length,
                           (serviceDescription) {
                         return Container(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
                           child: Text(
                             services[serviceIndex]
                                 .description[serviceDescription],
-                            style: TextStyle(color: kDarker, fontSize: 35),
+                            style: const TextStyle(color: kDarker, fontSize: 35),
                           ),
                         );
                       }),
@@ -205,7 +202,7 @@ class _SegmentedButtonWithAnimatedContainerState
                 height: 300,
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
-                  physics: BouncingScrollPhysics(
+                  physics: const BouncingScrollPhysics(
                     parent: AlwaysScrollableScrollPhysics(),
                   ),
                   child: Row(
@@ -237,14 +234,14 @@ class _SegmentedButtonWithAnimatedContainerState
                               duration: hoverAnimationDuration,
                               width: 256,
                               height: 226,
-                              margin: EdgeInsets.symmetric(
+                              margin: const EdgeInsets.symmetric(
                                   vertical: kDefaultPadding * 2),
                               decoration: BoxDecoration(
                                 color: services[service].color,
                                 borderRadius: BorderRadius.circular(10),
                                 boxShadow: [
                                   BoxShadow(
-                                    offset: Offset(0, 10),
+                                    offset: const Offset(0, 10),
                                     blurRadius: 50,
                                     color: theme.brightness == Brightness.light
                                         ? kPitchDark.withOpacity(.2)
@@ -260,16 +257,16 @@ class _SegmentedButtonWithAnimatedContainerState
                                     width: 120,
                                     height: 120,
                                     padding:
-                                        EdgeInsets.all(kDefaultPadding * 1.5),
+                                        const EdgeInsets.all(kDefaultPadding * 1.5),
                                     decoration: BoxDecoration(
                                       color: theme.brightness ==
                                               Brightness.light
                                           ? whitebackgroundColor
-                                          : Color.fromARGB(255, 188, 198, 219),
+                                          : const Color.fromARGB(255, 188, 198, 219),
                                       shape: BoxShape.circle,
                                       boxShadow: [
                                         BoxShadow(
-                                          offset: Offset(0, 20),
+                                          offset: const Offset(0, 20),
                                           blurRadius: 30,
                                           color: Colors.black.withOpacity(.3),
                                         )
@@ -280,27 +277,27 @@ class _SegmentedButtonWithAnimatedContainerState
                                       fit: BoxFit.fill,
                                     ),
                                   ),
-                                  SizedBox(height: kDefaultPadding),
+                                  const SizedBox(height: kDefaultPadding),
                                   Text(
                                     services[service].title,
                                     style: servicecardTextStyle,
                                   ),
                                   (serviceIndex != service)
-                                      ? SizedBox(height: 5)
+                                      ? const SizedBox(height: 5)
                                       : Container(
-                                          margin: EdgeInsets.symmetric(
+                                          margin: const EdgeInsets.symmetric(
                                               horizontal: 40),
                                           height: 5,
                                           decoration: BoxDecoration(
                                               boxShadow: [
                                                 BoxShadow(
-                                                  offset: Offset(2, 3),
+                                                  offset: const Offset(2, 3),
                                                   blurRadius: 5,
                                                   color: Colors.black
                                                       .withOpacity(.2),
                                                 )
                                               ],
-                                              borderRadius: BorderRadius.all(
+                                              borderRadius: const BorderRadius.all(
                                                 Radius.circular(5),
                                               ),
                                               color: Colors.red),
@@ -318,7 +315,7 @@ class _SegmentedButtonWithAnimatedContainerState
               SizedBox(
                 height: 200,
                 child: AnimatedContainer(
-                  margin: EdgeInsets.symmetric(horizontal: 20),
+                  margin: const EdgeInsets.symmetric(horizontal: 20),
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
                         transform: GradientRotation(2 * pi / 3 * 2),
@@ -338,11 +335,11 @@ class _SegmentedButtonWithAnimatedContainerState
                           services[serviceIndex].description.length,
                           (serviceDescription) {
                         return Container(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
                           child: Text(
                             services[serviceIndex]
                                 .description[serviceDescription],
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: kDarker,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w700),

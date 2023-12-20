@@ -58,9 +58,9 @@ class GlassContent extends StatelessWidget {
                     : kPitchDark,
               ),
             ),
-            SizedBox(height: kDefaultPadding),
+            const SizedBox(height: kDefaultPadding),
             Text(
-              'Project Management\nFrom Start To Finish',
+              'Digital Services\nFrom Start To Finish',
               style: TextStyle(
                 fontFamily: 'Helvetica Now Display',
                 fontWeight: FontWeight.w800,
@@ -71,17 +71,17 @@ class GlassContent extends StatelessWidget {
                     : kPitchDark,
               ),
             ),
-            SizedBox(height: kDefaultPadding),
+            const SizedBox(height: kDefaultPadding),
             SizedBox(
-              height: kDefaultPadding * 2.5,
+              height: kDefaultPadding * 2.9,
               child: AnimatedTextKit(
-                pause: Duration(seconds: 1),
+                pause: const Duration(seconds: 1),
                 totalRepeatCount: 2,
                 animatedTexts: List.generate(
                   titlesText.length,
                   (i) => TyperAnimatedText(
                     titlesText[i],
-                    speed: Duration(milliseconds: 50),
+                    speed: const Duration(milliseconds: 50),
                     textStyle: animatedTextTextStyle,
                     curve: Curves.linear,
                   ),

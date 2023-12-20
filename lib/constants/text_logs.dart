@@ -12,11 +12,11 @@ const String githubLink = 'https://github.com/bennettchamberlain';
 
 const String gitHubRepoLink = 'https://github.com/bennettchamberlain';
 
-final String myEmail = 'bennett@arbiterpm.com';
+const String myEmail = 'bennett@arbiterpm.com';
 
-final String emailSubject = 'Concerning a job for Arbiter PM';
+const String emailSubject = 'Concerning a job for Arbiter PM';
 
-final String body = '';
+const String body = '';
 
 // const String k =
 //     'Lorem Ipsum ed Lorem Ipsum edLorem Ipsum ed Lorem Ipsum edLorem Ipsum ed Lorem Ipsum edLorem Ipsum ed Lorem Ipsum edLorem Ipsum ed Lorem ed';
@@ -47,8 +47,8 @@ const String recentWorksText4 =
     'Effortless iPad image editing app with Mr. Brainwash\'s unique assets';
 
 const String feedbackText =
-    'Your dedication to creating an intuitive and visually appealing platform has significantly impacted our success. our recent client survey revealed that the website you crafted contributed to an additional \$40,000 in business within five months. We\'re grateful for your expertise and look forward to more collaborative achievements.';
+    'Thanks to Arbiter, our new website directly increased revenue by \$40,000 within five months, as revealed by our recent client survey. Your dedication to crafting an intuitive and visually appealing platform has been instrumental. We appreciate your expertise and eagerly anticipate more collaborative achievements ahead!';
 const String feedbackText2 =
-    'Bennett\'s expertise building the ticketing system for the Mr Brainwash Art Museum was invaluable. The platform solf 100,000 tickets during its lieftime and allowed us to track where our customers were coming from and increased effeciencies across our marketing department.';
+    'Bennett\'s expertise in constructing the ticketing system for the Mr Brainwash Art Museum proved to be invaluable. The platform sold 100,000 tickets throughout its lifetime, enabling us to trace our customers\' origins and enhance efficiencies within our marketing department.';
 const String feedbackText3 =
-    'The Webbed Feet Radio website is nothing short of amazing, bringing to life a novel way of exploring the ties that bind artists across genres, Arbiter was able to create exactly the experience that we had envisioned.';
+    'The Webbed Feet Radio website is nothing short of amazing, bringing to life a novel way of exploring the ties that bind artists across genres. Arbiter was able to create exactly the experience that we had envisioned.';

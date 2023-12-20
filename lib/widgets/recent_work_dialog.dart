@@ -22,24 +22,24 @@ class _RecentWorkDialogState extends State<RecentWorkDialog> {
           color: platinum,
           child: Column(
             children: [
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   IconButton(
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    icon: Icon(Icons.keyboard_backspace, color: davyGrey),
+                    icon: const Icon(Icons.keyboard_backspace, color: davyGrey),
                   ),
                 ],
               ),
               Center(
                 child: Container(
-                  constraints: BoxConstraints(maxWidth: 700),
+                  constraints: const BoxConstraints(maxWidth: 700),
                   child: Column(children: [
                     (recentWorksDetails[widget.index].platform != null)
                         ? Padding(
@@ -65,7 +65,7 @@ class _RecentWorkDialogState extends State<RecentWorkDialog> {
                     const SizedBox(height: 10),
                     Padding(
                         padding:
-                            EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                            const EdgeInsets.symmetric(horizontal: kDefaultPadding),
                         child: recentWorksDetails[widget.index].description),
                     const SizedBox(height: kDefaultPadding * 3),
                   ]),

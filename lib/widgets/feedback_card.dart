@@ -38,15 +38,15 @@ class _FeedBackCardState extends State<FeedBackCard> {
           duration: hoverAnimationDuration,
           height: 350,
           width: 350,
-          padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
-          margin: EdgeInsets.only(top: kDefaultPadding * 3),
+          padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+          margin: const EdgeInsets.only(top: kDefaultPadding * 3),
           decoration: BoxDecoration(
             color: feedBacks[widget.index].color,
             borderRadius: BorderRadius.circular(10),
             boxShadow: [
               if (isHover)
                 BoxShadow(
-                  offset: Offset(0, 10),
+                  offset: const Offset(0, 10),
                   blurRadius: 50,
                   color: theme.brightness == Brightness.light
                       ? kPitchDark.withOpacity(.1)
@@ -57,7 +57,7 @@ class _FeedBackCardState extends State<FeedBackCard> {
           child: Column(
             children: [
               Transform.translate(
-                offset: Offset(0, -55),
+                offset: const Offset(0, -55),
                 child: AnimatedContainer(
                   duration: hoverAnimationDuration,
                   height: 100,
@@ -79,12 +79,12 @@ class _FeedBackCardState extends State<FeedBackCard> {
                 textAlign: TextAlign.left,
                 style: feedbackCardTextStyle,
               ),
-              SizedBox(height: kDefaultPadding * 0.7),
+              const SizedBox(height: kDefaultPadding * 0.7),
               Text(
                 feedBacks[widget.index].name,
                 style: feedbackCardNameTextStyle,
               ),
-              SizedBox(height: kDefaultPadding),
+              const SizedBox(height: kDefaultPadding),
             ],
           ),
         ),

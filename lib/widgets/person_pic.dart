@@ -9,7 +9,7 @@ class PersonPic extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(right: 50, bottom: 80),
+      padding: const EdgeInsets.only(right: 50, bottom: 80),
       constraints: BoxConstraints(maxHeight: height),
       child: Image.asset(starsTogether, scale: 5),
     );

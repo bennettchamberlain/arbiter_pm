@@ -16,7 +16,7 @@ import '../widgets/mouse_magnet.dart';
 import '../widgets/portfolio_drawer.dart';
 
 class HomeView extends GetView<ScrollingController> {
-  HomeView({Key? key}) : super(key: key);
+  const HomeView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class HomeView extends GetView<ScrollingController> {
                       children: [
                         Column(
                           children: [
-                            LandingCarousel(),
+                            const LandingCarousel(),
                             Container(
                               color: theme.scaffoldBackgroundColor,
                               width: double.infinity,
@@ -49,7 +49,7 @@ class HomeView extends GetView<ScrollingController> {
                             ),
                           ],
                         ),
-                        Align(
+                        const Align(
                           alignment: Alignment.center,
                           child: LandingSect(),
                         ),
@@ -99,14 +99,14 @@ class HomeView extends GetView<ScrollingController> {
   }
 
   static final List<Widget> _sections = [
-    AboutSection(),
-    ServiceSection(),
-    RecentWorkSection(),
-    FeedBackSection(),
+    const AboutSection(),
+    const ServiceSection(),
+    const RecentWorkSection(),
+    const FeedBackSection(),
   ];
 
   static final List<Widget> _sectsBottom = [
-    ContactSection(),
-    BottomSection(),
+    const ContactSection(),
+    const BottomSection(),
   ];
 }

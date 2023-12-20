@@ -2,7 +2,7 @@ import 'package:arbiter_pm/constants/colors.dart';
 
 import 'package:flutter/material.dart';
 
-final TextStyle buttonTextStyle = TextStyle(
+const TextStyle buttonTextStyle = TextStyle(
   fontFamily: 'Helvetica Now Display',
   fontWeight: FontWeight.w500,
   fontSize: 14,
@@ -10,7 +10,7 @@ final TextStyle buttonTextStyle = TextStyle(
   color: whitebackgroundColor,
 );
 
-final TextStyle buttonTextStyle2 = TextStyle(
+const TextStyle buttonTextStyle2 = TextStyle(
   fontFamily: 'Helvetica Now Display',
   fontWeight: FontWeight.w500,
   fontSize: 14,
@@ -18,7 +18,7 @@ final TextStyle buttonTextStyle2 = TextStyle(
   color: russianViolet,
 );
 
-final TextStyle buttonTextStyle3 = TextStyle(
+const TextStyle buttonTextStyle3 = TextStyle(
   fontFamily: 'Helvetica Now Display',
   fontWeight: FontWeight.w500,
   fontSize: 14,
@@ -26,7 +26,7 @@ final TextStyle buttonTextStyle3 = TextStyle(
   color: davyGrey,
 );
 
-final TextStyle feedbackCardTextStyle = TextStyle(
+const TextStyle feedbackCardTextStyle = TextStyle(
   fontFamily: 'Helvetica Now Display',
   fontWeight: FontWeight.w500,
   fontSize: 16,
@@ -34,7 +34,7 @@ final TextStyle feedbackCardTextStyle = TextStyle(
   color: kTextColor,
 );
 
-final TextStyle feedbackCardNameTextStyle = TextStyle(
+const TextStyle feedbackCardNameTextStyle = TextStyle(
   fontFamily: 'Helvetica Now Display',
   fontWeight: FontWeight.w500,
   fontSize: 18,
@@ -42,7 +42,7 @@ final TextStyle feedbackCardNameTextStyle = TextStyle(
   color: kPitchDark,
 );
 
-final TextStyle servicecardTextStyle = TextStyle(
+const TextStyle servicecardTextStyle = TextStyle(
   fontFamily: 'Helvetica Now Display',
   fontWeight: FontWeight.w500,
   fontSize: 16,
@@ -50,7 +50,7 @@ final TextStyle servicecardTextStyle = TextStyle(
   color: kTextColor,
 );
 
-final TextStyle recentworkcardText1TextStyle = TextStyle(
+const TextStyle recentworkcardText1TextStyle = TextStyle(
   fontFamily: 'Helvetica Now Display',
   fontWeight: FontWeight.w400,
   fontSize: 14,
@@ -58,7 +58,7 @@ final TextStyle recentworkcardText1TextStyle = TextStyle(
   color: kTextColor,
 );
 
-final TextStyle recentworkcardText2TextStyle = TextStyle(
+const TextStyle recentworkcardText2TextStyle = TextStyle(
   fontFamily: 'Helvetica Now Display',
   fontWeight: FontWeight.w400,
   fontSize: 25,
@@ -66,7 +66,7 @@ final TextStyle recentworkcardText2TextStyle = TextStyle(
   color: kTextColor,
 );
 
-final TextStyle recentworkcardText3TextStyle = TextStyle(
+const TextStyle recentworkcardText3TextStyle = TextStyle(
   fontFamily: 'Helvetica Now Display',
   fontWeight: FontWeight.w500,
   fontSize: 14,
@@ -75,7 +75,7 @@ final TextStyle recentworkcardText3TextStyle = TextStyle(
   decoration: TextDecoration.underline,
 );
 
-final TextStyle recentworkcardText4TextStyle = TextStyle(
+const TextStyle recentworkcardText4TextStyle = TextStyle(
   fontFamily: 'Helvetica Now Display',
   fontWeight: FontWeight.w500,
   fontSize: 35,

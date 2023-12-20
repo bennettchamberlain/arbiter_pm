@@ -24,7 +24,7 @@ class HireMeCard extends StatelessWidget {
       padding: EdgeInsets.all(ResponsiveWidget.isSmallScreen(context)
           ? kDefaultPadding * 1.5
           : kDefaultPadding * 2),
-      margin: EdgeInsets.only(bottom: kDefaultPadding),
+      margin: const EdgeInsets.only(bottom: kDefaultPadding),
       constraints: BoxConstraints(
           maxWidth: ResponsiveWidget.isSmallScreen(context)
               ? _.width * .9
@@ -34,7 +34,7 @@ class HireMeCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            offset: Offset(0, 10),
+            offset: const Offset(0, 10),
             blurRadius: 50,
             color: theme.brightness == Brightness.light
                 ? kPitchDark.withOpacity(.1)
@@ -51,17 +51,17 @@ class HireMeCard extends StatelessWidget {
                         height: 80,
                         width: 80,
                       )
-                    : SizedBox(),
+                    : const SizedBox(),
                 ResponsiveWidget.isLargeScreen(context)
-                    ? Padding(
-                        padding: const EdgeInsets.symmetric(
+                    ? const Padding(
+                        padding: EdgeInsets.symmetric(
                             horizontal: kDefaultPadding),
                         child: SizedBox(
                           height: 80,
                           child: VerticalDivider(),
                         ),
                       )
-                    : SizedBox(),
+                    : const SizedBox(),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,10 +81,10 @@ class HireMeCard extends StatelessWidget {
                               : bodyTextColorDarkTheme,
                         ),
                       ),
-                      SizedBox(height: kDefaultPadding * .5),
+                      const SizedBox(height: kDefaultPadding * .5),
                       Text(
                         'Add Arbiter to your team.',
-                        style: theme.textTheme.subtitle1!.copyWith(
+                        style: theme.textTheme.titleMedium!.copyWith(
                           fontWeight: FontWeight.w400,
                           fontSize: 15,
                           letterSpacing: 1.5,
@@ -96,7 +96,7 @@ class HireMeCard extends StatelessWidget {
                 SizedBox(
                   height: 55,
                   child: Padding(
-                    padding: EdgeInsets.only(top: 0),
+                    padding: const EdgeInsets.only(top: 0),
                     child: ATextButton(
                       width:
                           ResponsiveWidget.isSmallScreen(context) ? 180 : 200,
@@ -119,17 +119,17 @@ class HireMeCard extends StatelessWidget {
                         height: 80,
                         width: 80,
                       )
-                    : SizedBox(),
+                    : const SizedBox(),
                 ResponsiveWidget.isLargeScreen(context)
-                    ? Padding(
-                        padding: const EdgeInsets.symmetric(
+                    ? const Padding(
+                        padding: EdgeInsets.symmetric(
                             horizontal: kDefaultPadding),
                         child: SizedBox(
                           height: 80,
                           child: VerticalDivider(),
                         ),
                       )
-                    : SizedBox(),
+                    : const SizedBox(),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -149,10 +149,10 @@ class HireMeCard extends StatelessWidget {
                               : bodyTextColorDarkTheme,
                         ),
                       ),
-                      SizedBox(height: kDefaultPadding * .5),
+                      const SizedBox(height: kDefaultPadding * .5),
                       Text(
                         'Add Arbiter to your team.',
-                        style: theme.textTheme.subtitle1!.copyWith(
+                        style: theme.textTheme.titleMedium!.copyWith(
                           fontWeight: FontWeight.w400,
                           fontSize: 15,
                           letterSpacing: 1.5,
@@ -161,7 +161,7 @@ class HireMeCard extends StatelessWidget {
                       SizedBox(
                         height: 55,
                         child: Padding(
-                          padding: EdgeInsets.only(top: 10),
+                          padding: const EdgeInsets.only(top: 10),
                           child: ATextButton(
                             width: ResponsiveWidget.isSmallScreen(context)
                                 ? 180

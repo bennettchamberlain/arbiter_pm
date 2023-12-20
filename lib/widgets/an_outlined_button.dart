@@ -34,7 +34,7 @@ class AnOutlinedButton extends StatelessWidget {
                 imageSrc,
                 height: ResponsiveWidget.isSmallScreen(context) ? 33 : 38,
               ),
-              SizedBox(width: kDefaultPadding * .5),
+              const SizedBox(width: kDefaultPadding * .5),
               Text(text, style: buttonTextStyle),
             ],
           ),

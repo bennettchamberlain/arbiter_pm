@@ -50,7 +50,7 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
           boxShadow: [
             if (isHover)
               BoxShadow(
-                offset: Offset(0, 10),
+                offset: const Offset(0, 10),
                 blurRadius: 50,
                 color: theme.brightness == Brightness.light
                     ? kPitchDark.withOpacity(.1)
@@ -85,7 +85,7 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
                           recentWorks[widget.index].category.toUpperCase(),
                           style: recentworkcardText1TextStyle),
                     ),
-                    SizedBox(height: kDefaultPadding * .5),
+                    const SizedBox(height: kDefaultPadding * .5),
                     Text(
                       recentWorks[widget.index].title,
                       style: TextStyle(
@@ -97,7 +97,7 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
                         color: kTextColor,
                       ),
                     ),
-                    SizedBox(height: kDefaultPadding * 0.8),
+                    const SizedBox(height: kDefaultPadding * 0.8),
                     Expanded(
                       child: InkWell(
                         onTap: () {
@@ -108,11 +108,11 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
                             },
                           );
                         },
-                        child: Text('View Details',
+                        child: const Text('View Details',
                             style: recentworkcardText3TextStyle),
                       ),
                     ),
-                    SizedBox(height: kDefaultPadding * .2),
+                    const SizedBox(height: kDefaultPadding * .2),
                   ],
                 ),
               ),

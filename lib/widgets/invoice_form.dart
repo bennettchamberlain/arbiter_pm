@@ -2,6 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class InvoiceForm extends StatefulWidget {
+  const InvoiceForm({
+    Key? key,
+  }) : super(key: key);
+
   @override
   _InvoiceFormState createState() => _InvoiceFormState();
 }
@@ -24,7 +28,7 @@ class _InvoiceFormState extends State<InvoiceForm> {
             padding: const EdgeInsets.only(left: 32.0, top: 32, right: 32),
             child: TextFormField(
               controller: _emailController,
-              decoration: InputDecoration(labelText: 'Email'),
+              decoration: const InputDecoration(labelText: 'Email'),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter an email address';
@@ -36,7 +40,7 @@ class _InvoiceFormState extends State<InvoiceForm> {
 
           // Item rows
           ..._items.map((item) => _buildItemRow(item)),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           // Add item button
           ElevatedButton(
             onPressed: () {
@@ -45,7 +49,7 @@ class _InvoiceFormState extends State<InvoiceForm> {
                     .add({'quantity': '', 'description': '', 'unit_cost': ''});
               });
             },
-            child: Text('Add Item'),
+            child: const Text('Add Item'),
           ),
           Align(
             alignment: Alignment.bottomRight,
@@ -73,9 +77,9 @@ class _InvoiceFormState extends State<InvoiceForm> {
                   FirebaseFirestore.instance.collection("invoices").add(_data);
 
                   ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text("Successfully Uploaded Invoice")));
+                      const SnackBar(content: Text("Successfully Uploaded Invoice")));
                 },
-                label: Padding(
+                label: const Padding(
                   padding: EdgeInsets.all(0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -101,7 +105,7 @@ class _InvoiceFormState extends State<InvoiceForm> {
           Expanded(
             child: TextFormField(
               initialValue: item['quantity'],
-              decoration: InputDecoration(labelText: 'Quantity'),
+              decoration: const InputDecoration(labelText: 'Quantity'),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter a quantity';
@@ -116,13 +120,13 @@ class _InvoiceFormState extends State<InvoiceForm> {
             ),
           ),
 
-          SizedBox(width: 30),
+          const SizedBox(width: 30),
 
           // Description field
           Expanded(
             child: TextFormField(
               initialValue: item['description'],
-              decoration: InputDecoration(labelText: 'Description'),
+              decoration: const InputDecoration(labelText: 'Description'),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter a description';
@@ -137,13 +141,13 @@ class _InvoiceFormState extends State<InvoiceForm> {
             ),
           ),
 
-          SizedBox(width: 30),
+          const SizedBox(width: 30),
 
           // Unit cost field
           Expanded(
             child: TextFormField(
               initialValue: item['unit_cost'],
-              decoration: InputDecoration(labelText: 'Unit Cost'),
+              decoration: const InputDecoration(labelText: 'Unit Cost'),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter a unit cost';

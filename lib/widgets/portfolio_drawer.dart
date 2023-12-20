@@ -1,18 +1,14 @@
 import 'dart:math';
-
 import 'package:arbiter_pm/widgets/drawer_button.dart';
-import 'package:arbiter_pm/widgets/landing_carousel.dart';
 import 'package:arbiter_pm/widgets/responsive_widget.dart';
 import 'package:arbiter_pm/widgets/small_social_card.dart';
 import 'package:flutter/material.dart' hide DrawerButton;
 import 'package:get/get.dart';
-
 import '../constants/colors.dart';
 import '../constants/constants.dart';
 import '../constants/image_paths.dart';
 import '../constants/text_logs.dart';
 import '../controllers/scrolling_controller.dart';
-import '../controllers/theme_controller.dart';
 
 class PortfolioDrawer extends StatefulWidget {
   const PortfolioDrawer({
@@ -28,8 +24,6 @@ class PortfolioDrawer extends StatefulWidget {
 
 class _PortfolioDrawerState extends State<PortfolioDrawer> {
   static var scrollcontroller = Get.find<ScrollingController>();
-  static var themeController = Get.find<ThemeController>();
- 
 
   List<String> menuItems = [
     'Home',
@@ -62,7 +56,7 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
           SafeArea(
             child: Container(
               width: _.width * .45,
-              padding: EdgeInsets.all(kDefaultPadding * 1.2),
+              padding: const EdgeInsets.all(kDefaultPadding * 1.2),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -71,7 +65,7 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SizedBox(height: kDefaultPadding),
+                        const SizedBox(height: kDefaultPadding),
                         Align(
                           alignment: Alignment.center,
                           child: Column(
@@ -91,8 +85,8 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                                   Navigator.of(context).pushNamed("/invoice");
                                 },
                                 child: Container(
-                                  padding: EdgeInsets.all(5),
-                                  child: Text(
+                                  padding: const EdgeInsets.all(5),
+                                  child: const Text(
                                     "PAY INVOICE",
                                     style: TextStyle(
                                         fontSize: 11,
@@ -100,7 +94,7 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                                   ),
                                 ),
                               ),
-                              SizedBox(height: kDefaultPadding),
+                              const SizedBox(height: kDefaultPadding),
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                     shape: RoundedRectangleBorder(
@@ -117,8 +111,8 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                                       context, selectedIndex));
                                 },
                                 child: Container(
-                                  padding: EdgeInsets.all(5),
-                                  child: Text(
+                                  padding: const EdgeInsets.all(5),
+                                  child: const Text(
                                     "CONTACT US",
                                     style: TextStyle(
                                         fontSize: 11,
@@ -129,7 +123,7 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                             ],
                           ),
                         ),
-                        SizedBox(height: kDefaultPadding),
+                        const SizedBox(height: kDefaultPadding),
                         Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: kDefaultPadding * 1.5),
@@ -140,20 +134,20 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                             decoration: BoxDecoration(
                               boxShadow: [
                                 BoxShadow(
-                                  offset: Offset(0, 10),
+                                  offset: const Offset(0, 10),
                                   blurRadius: 50,
                                   color: theme.brightness == Brightness.light
                                       ? kPitchDark.withOpacity(.9)
                                       : whitebackgroundColor.withOpacity(.9),
                                 ),
                               ],
-                              image: DecorationImage(
+                              image: const DecorationImage(
                                   image: AssetImage(starsTogether)),
                             ),
                           ),
                         ),
-                        SizedBox(height: kDefaultPadding * .5),
-                        SizedBox(height: kDefaultPadding),
+                        const SizedBox(height: kDefaultPadding * .5),
+                        const SizedBox(height: kDefaultPadding),
                       ],
                     ),
                   ),
@@ -176,18 +170,18 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                     children: [
                       SmallSocialCard(
                         iconSrc: iconPicWhatsApp,
-                        color: Color(0xFFE4FFC7),
+                        color: const Color(0xFFE4FFC7),
                         size: 25,
                         press: () => launchURLs(whatsAppLink),
                       ),
-                      SizedBox(width: kDefaultPadding),
+                      const SizedBox(width: kDefaultPadding),
                       SmallSocialCard(
                         iconSrc: iconPicTwitter,
-                        color: Color(0xFFE8F0F9),
+                        color: const Color(0xFFE8F0F9),
                         size: 25,
                         press: () => launchURLs(twitterLink),
                       ),
-                      SizedBox(width: kDefaultPadding),
+                      const SizedBox(width: kDefaultPadding),
                     ],
                   ),
                 ],

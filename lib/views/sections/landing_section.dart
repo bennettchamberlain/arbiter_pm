@@ -17,7 +17,7 @@ class LandingSect extends StatelessWidget {
 
     return Container(
       alignment: Alignment.center,
-      margin: EdgeInsets.only(top: kDefaultPadding * 1.5),
+      margin: const EdgeInsets.only(top: kDefaultPadding * 1.5),
       width: _.width * .9,
       child: Stack(
         clipBehavior: Clip.none,
@@ -30,14 +30,14 @@ class LandingSect extends StatelessWidget {
                       left: ResponsiveWidget.isSmallScreen(context)
                           ? kDefaultPadding * 2
                           : 1),
-                  child: LoGo()),
-              Spacer(),
-              GlassContent(),
-              Spacer(flex: 3),
+                  child: const LoGo()),
+              const Spacer(),
+              const GlassContent(),
+              const Spacer(flex: 3),
             ],
           ),
           ResponsiveWidget.isSmallScreen(context)
-              ? SizedBox()
+              ? const SizedBox()
               : Positioned(
                   bottom: 90,
                   right: -25,
@@ -48,12 +48,12 @@ class LandingSect extends StatelessWidget {
           Positioned(
             bottom: 49,
             child: ResponsiveWidget.isSmallScreen(context)
-                ? SizedBox()
-                : MenuBar(),
+                ? const SizedBox()
+                : const MenuBar(),
           ),
           ResponsiveWidget.isSmallScreen(context)
-              ? SizedBox()
-              : Positioned(
+              ? const SizedBox()
+              : const Positioned(
                   right: 0,
                   top: 0,
                   child: SizedBox(

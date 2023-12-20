@@ -2,7 +2,6 @@ import 'package:arbiter_pm/widgets/contact_form.dart';
 import 'package:arbiter_pm/widgets/responsive_widget.dart';
 import 'package:arbiter_pm/widgets/social_card.dart';
 import 'package:flutter/material.dart';
-
 import '../constants/colors.dart';
 import '../constants/constants.dart';
 import '../constants/image_paths.dart';
@@ -19,15 +18,15 @@ class ContactBox extends StatelessWidget {
 
     return Container(
       height: 900,
-      padding: EdgeInsets.all(kDefaultPadding * 3),
-      margin: EdgeInsets.only(top: kDefaultPadding * 2),
-      constraints: BoxConstraints(maxWidth: 1000),
+      padding: const EdgeInsets.all(kDefaultPadding * 3),
+      margin: const EdgeInsets.only(top: kDefaultPadding * 2),
+      constraints: const BoxConstraints(maxWidth: 1000),
       decoration: BoxDecoration(
         color: theme.scaffoldBackgroundColor,
-        borderRadius: BorderRadius.all(Radius.circular(20)),
+        borderRadius: const BorderRadius.all(Radius.circular(20)),
         boxShadow: [
           BoxShadow(
-            offset: Offset(0, 10),
+            offset: const Offset(0, 10),
             blurRadius: 50,
             color: theme.brightness == Brightness.light
                 ? kPitchDark.withOpacity(.1)
@@ -38,33 +37,33 @@ class ContactBox extends StatelessWidget {
       child: Column(
         children: [
           ResponsiveWidget.isSmallScreen(context)
-              ? SizedBox()
-              : SizedBox(height: kDefaultPadding * 2),
+              ? const SizedBox()
+              : const SizedBox(height: kDefaultPadding * 2),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SocialCard(
                 iconSrc: iconPicWhatsApp,
                 name: 'WhatsApp',
-                color: Color(0xFFD9FFFC),
+                color: const Color(0xFFD9FFFC),
                 press: () => launchURLs(whatsAppLink),
               ),
               SocialCard(
                 iconSrc: emailIcon,
                 name: 'Email',
-                color: Color(0xFFE4FFC7),
+                color: const Color(0xFFE4FFC7),
                 press: () => launchEmailUrl(),
               ),
               SocialCard(
                 iconSrc: iconPicGithub,
                 name: 'Github',
-                color: Color(0xFFE8F0F9),
+                color: const Color(0xFFE8F0F9),
                 press: () => launchURLs(githubLink),
               ),
             ],
           ),
-          SizedBox(height: kDefaultPadding * 2),
-          ContactForm(),
+          const SizedBox(height: kDefaultPadding * 2),
+          const ContactForm(),
         ],
       ),
     );

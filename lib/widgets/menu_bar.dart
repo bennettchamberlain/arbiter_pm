@@ -41,13 +41,13 @@ class _MenuBarState extends State<MenuBar> {
               : kDefaultPadding * 2.5),
       decoration: BoxDecoration(
         color: theme.scaffoldBackgroundColor,
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(10),
           topRight: Radius.circular(10),
         ),
         boxShadow: [
           BoxShadow(
-            offset: Offset(0, 10),
+            offset: const Offset(0, 10),
             blurRadius: 50,
             color: theme.brightness == Brightness.light
                 ? kPitchDark.withOpacity(.1)
@@ -63,7 +63,7 @@ class _MenuBarState extends State<MenuBar> {
           menuItems.length,
           (i) => buildMenuItem(
               i,
-              theme.textTheme.button!.copyWith(
+              theme.textTheme.labelLarge!.copyWith(
                 fontWeight: FontWeight.w300,
                 fontSize: 12,
                 letterSpacing: 1,
@@ -86,14 +86,14 @@ class _MenuBarState extends State<MenuBar> {
           });
         },
         child: Container(
-          constraints: BoxConstraints(minWidth: 75),
+          constraints: const BoxConstraints(minWidth: 75),
           height: 100,
           child: Stack(
             alignment: Alignment.center,
             children: [
               Text(menuItems[i].toUpperCase(), style: style),
               AnimatedPositioned(
-                duration: Duration(microseconds: 200),
+                duration: const Duration(microseconds: 200),
                 left: 0,
                 right: 0,
                 bottom: selectedIndex != i && hoverIndex == i ? -20 : -32,
@@ -102,7 +102,7 @@ class _MenuBarState extends State<MenuBar> {
                 ),
               ),
               AnimatedPositioned(
-                duration: Duration(microseconds: 200),
+                duration: const Duration(microseconds: 200),
                 left: 0,
                 right: 0,
                 bottom: selectedIndex == i ? -2 : -32,

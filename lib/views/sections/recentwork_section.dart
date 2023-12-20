@@ -21,24 +21,24 @@ class RecentWorkSection extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         color: theme.brightness == Brightness.light
-            ? Color(0xFFF7E8FF)
+            ? const Color(0xFFF7E8FF)
             : bgColorDarkTheme,
-        image: DecorationImage(fit: BoxFit.cover, image: AssetImage(bg_img1)),
+        image: const DecorationImage(fit: BoxFit.cover, image: AssetImage(bg_img1)),
       ),
       child: Column(
         children: [
           Transform.translate(
-            offset: Offset(0, -50),
-            child: HireMeCard(),
+            offset: const Offset(0, -50),
+            child: const HireMeCard(),
           ),
           SectionTitle(
             title: ResponsiveWidget.isLargeScreen(context)
                 ? 'Client Success Showcase'
                 : "Our Clients",
             subTitle: 'Portfolio Highlights',
-            color: Color(0xFFFFB100),
+            color: const Color(0xFFFFB100),
           ),
-          SizedBox(height: kDefaultPadding * 1.5),
+          const SizedBox(height: kDefaultPadding * 1.5),
           SizedBox(
             width: 1110,
             child: Wrap(
@@ -69,7 +69,7 @@ class RecentWorkSection extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: kDefaultPadding * 3),
+          const SizedBox(height: kDefaultPadding * 3),
         ],
       ),
     );

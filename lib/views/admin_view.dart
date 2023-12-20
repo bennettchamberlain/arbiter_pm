@@ -11,10 +11,9 @@ class AdminView extends StatefulWidget {
 class _AdminViewState extends State<AdminView> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
         body: SingleChildScrollView(
-      
-          child: Column(
+      child: Column(
         children: [SizedBox(height: 32), Text("New Invoice"), InvoiceForm()],
       ),
     ));
