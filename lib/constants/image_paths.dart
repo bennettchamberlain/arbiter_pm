@@ -41,9 +41,9 @@ const String toTopIconImage = 'assets/images/arrowhead-up.png';
 const String svgArbiterLogo = 'assets/images/Primary Logo/Logo-primary.svg';
 const String pngArbiterLogo = 'assets/images/Primary Logo/Logo-primary.png';
 
-const String landingImage1 = 'assets/images/New Content/la copy.png';
-const String landingImage2 = 'assets/images/New Content/nyc copy.png';
-const String landingImage3 = 'assets/images/New Content/sf copy.png';
+const String landingImage1 = 'assets/images/la copy.jpg';
+const String landingImage2 = 'assets/images/nyc copy.jpg';
+const String landingImage3 = 'assets/images/sf copy.jpg';
 
 const String star1 = 'assets/images/New Content/Star_uniform.png';
 const String star2 = 'assets/images/New Content/Star_1-long-tail.png';

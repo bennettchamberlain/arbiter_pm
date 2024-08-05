@@ -26,7 +26,7 @@ class GlassContent extends StatelessWidget {
     );
 
     return GlassContainer(
-      height: 425,
+      height: 375,
       width: _.width * .85,
       shadowStrength: 1,
       opacity: .001,
@@ -39,7 +39,7 @@ class GlassContent extends StatelessWidget {
         padding: EdgeInsets.symmetric(
           horizontal: ResponsiveWidget.isLargeScreen(context)
               ? kDefaultPadding * 6
-              : kDefaultPadding * 3,
+              : kDefaultPadding * 1.5,
           vertical: kDefaultPadding,
         ),
         child: Column(
@@ -47,11 +47,11 @@ class GlassContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Relationship Oriented, Result Driven',
+              'Your Vision, Our Expertise',
               style: TextStyle(
                 fontFamily: 'Helvetica Now Display',
                 fontWeight: FontWeight.w400,
-                fontSize: ResponsiveWidget.isSmallScreen(context) ? 13 : 17,
+                fontSize: ResponsiveWidget.isSmallScreen(context) ? 18 : 25,
                 letterSpacing: 2,
                 color: theme.brightness == Brightness.light
                     ? whitebackgroundColor
@@ -60,11 +60,11 @@ class GlassContent extends StatelessWidget {
             ),
             const SizedBox(height: kDefaultPadding),
             Text(
-              'Digital Services\nFrom Start To Finish',
+              'Bespoke Digital \nTransformations',
               style: TextStyle(
                 fontFamily: 'Helvetica Now Display',
                 fontWeight: FontWeight.w800,
-                fontSize: ResponsiveWidget.isSmallScreen(context) ? 28 : 66,
+                fontSize: ResponsiveWidget.isSmallScreen(context) ? 24 : 56,
                 letterSpacing: 1,
                 color: theme.brightness == Brightness.light
                     ? whitebackgroundColor

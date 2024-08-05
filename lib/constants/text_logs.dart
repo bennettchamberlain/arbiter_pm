@@ -22,14 +22,14 @@ const String body = '';
 //     'Lorem Ipsum ed Lorem Ipsum edLorem Ipsum ed Lorem Ipsum edLorem Ipsum ed Lorem Ipsum edLorem Ipsum ed Lorem Ipsum edLorem Ipsum ed Lorem ed';
 
 const List<String> titlesText = [
-  'iOS, Android, & Web Development',
-  'Team Augmentation',
+  'Innovative Software',
+  'Website Development',
   'UI/UX Design',
-  'SEO & Marketing',
+  'Strategic SEO & Marketing',
 ];
 
 const String aboutMeTexta =
-    "Elevate your business with Arbiter - We work hard day in and day out to help brands build exceptional products and services, and discover how powerful they can be.";
+    "We work hard day in and day out to help brands build exceptional products and services, and discover how powerful they can be.";
 const String aboutMeTextb =
     "We're passionate people with an “X” factor, uniting who we are with what we do. We bring our expertise and hustle inside the walls of Arbiter and beyond.";
 

@@ -99,12 +99,13 @@ class _SegmentedButtonWithAnimatedContainerState
                                   duration: hoverAnimationDuration,
                                   width: 120,
                                   height: 120,
-                                  padding:
-                                      const EdgeInsets.all(kDefaultPadding * 1.5),
+                                  padding: const EdgeInsets.all(
+                                      kDefaultPadding * 1.5),
                                   decoration: BoxDecoration(
                                     color: theme.brightness == Brightness.light
                                         ? whitebackgroundColor
-                                        : const Color.fromARGB(255, 188, 198, 219),
+                                        : const Color.fromARGB(
+                                            255, 188, 198, 219),
                                     shape: BoxShape.circle,
                                     boxShadow: [
                                       BoxShadow(
@@ -131,7 +132,8 @@ class _SegmentedButtonWithAnimatedContainerState
                                         width: (service == serviceIndex)
                                             ? double.infinity
                                             : 0,
-                                        duration: const Duration(milliseconds: 500),
+                                        duration:
+                                            const Duration(milliseconds: 500),
                                         margin: const EdgeInsets.symmetric(
                                             horizontal: 40),
                                         height: 5,
@@ -144,7 +146,8 @@ class _SegmentedButtonWithAnimatedContainerState
                                                     .withOpacity(.2),
                                               )
                                             ],
-                                            borderRadius: const BorderRadius.all(
+                                            borderRadius:
+                                                const BorderRadius.all(
                                               Radius.circular(5),
                                             ),
                                             color: Colors.red),
@@ -186,7 +189,9 @@ class _SegmentedButtonWithAnimatedContainerState
                           child: Text(
                             services[serviceIndex]
                                 .description[serviceDescription],
-                            style: const TextStyle(color: kDarker, fontSize: 35),
+                            maxLines: 10,
+                            style:
+                                const TextStyle(color: kDarker, fontSize: 35),
                           ),
                         );
                       }),
@@ -256,13 +261,14 @@ class _SegmentedButtonWithAnimatedContainerState
                                     duration: hoverAnimationDuration,
                                     width: 120,
                                     height: 120,
-                                    padding:
-                                        const EdgeInsets.all(kDefaultPadding * 1.5),
+                                    padding: const EdgeInsets.all(
+                                        kDefaultPadding * 1.5),
                                     decoration: BoxDecoration(
-                                      color: theme.brightness ==
-                                              Brightness.light
-                                          ? whitebackgroundColor
-                                          : const Color.fromARGB(255, 188, 198, 219),
+                                      color:
+                                          theme.brightness == Brightness.light
+                                              ? whitebackgroundColor
+                                              : const Color.fromARGB(
+                                                  255, 188, 198, 219),
                                       shape: BoxShape.circle,
                                       boxShadow: [
                                         BoxShadow(
@@ -297,7 +303,8 @@ class _SegmentedButtonWithAnimatedContainerState
                                                       .withOpacity(.2),
                                                 )
                                               ],
-                                              borderRadius: const BorderRadius.all(
+                                              borderRadius:
+                                                  const BorderRadius.all(
                                                 Radius.circular(5),
                                               ),
                                               color: Colors.red),

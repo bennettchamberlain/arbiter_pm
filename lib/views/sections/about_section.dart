@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import '../../constants/image_paths.dart';
 import '../../constants/text_logs.dart';
@@ -28,20 +29,21 @@ class AboutSection extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: kDefaultPadding * 2),
       padding: EdgeInsets.symmetric(
           horizontal: ResponsiveWidget.isLargeScreen(context)
-              ? kDefaultPadding * 10
+              ? kDefaultPadding * 8
               : kDefaultPadding * 1.5),
       child: Column(
         children: [
           const SizedBox(height: kDefaultPadding * 2),
           ResponsiveWidget.isLargeScreen(context)
               ? Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
                       children: [
-                        Text('About',
-                            style: theme.textTheme.displayMedium!
-                                .copyWith(fontWeight: FontWeight.w900)),
+                        Text('Relationship Oriented\nResults Driven',
+                            style: theme.textTheme.displayMedium!.copyWith(
+                                fontWeight: FontWeight.w900, fontSize: 24)),
                         const SizedBox(height: 15),
                         Image.asset(
                             theme.brightness == Brightness.light
@@ -53,15 +55,47 @@ class AboutSection extends StatelessWidget {
                     const SizedBox(
                       width: 20,
                     ),
-                    const Expanded(child: AboutSectionText(text: aboutMeTexta)),
+                    Container(
+                        constraints: BoxConstraints(maxWidth: 600),
+                        child: Column(
+                          children: [
+                            AboutSectionText(text: aboutMeTexta),
+                            SizedBox(height: 50),
+                            AboutSectionText(text: aboutMeTextb),
+                            SizedBox(height: 50),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                AnOutlinedButton(
+                                  width: 210,
+                                  text: 'Contact Us',
+                                  imageSrc: hireUs,
+                                  press: () {
+                                    selectedIndex = 5;
+
+                                    Obx(scrollcontroller.scrollTo(
+                                        context, selectedIndex));
+                                  },
+                                ),
+                                const SizedBox(width: kDefaultPadding * 2),
+                                ATextButton(
+                                  width: 220,
+                                  text: 'Past Work',
+                                  imageSrc: ourWork,
+                                  press: () {
+                                    selectedIndex = 3;
+                                    Obx(scrollcontroller.scrollTo(
+                                        context, selectedIndex));
+                                  },
+                                ),
+                              ],
+                            )
+                          ],
+                        )),
                     const SizedBox(
                       width: 20,
                     ),
                     const ExperienceCountCard(expNum: '10'),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    const Expanded(child: AboutSectionText(text: aboutMeTextb)),
                   ],
                 )
               : SizedBox(
@@ -75,59 +109,30 @@ class AboutSection extends StatelessWidget {
                             children: [
                               ResponsiveWidget.isLargeScreen(context)
                                   ? const SizedBox(
-                                      width: kDefaultPadding * 4,
+                                      width: kDefaultPadding,
                                     )
                                   : const SizedBox(width: kDefaultPadding * 2),
-                              Image.asset(starsTogether, width: 65),
-                              const SizedBox(width: 10),
-                              Text('About',
-                                  style: theme.textTheme.displayMedium!
-                                      .copyWith(fontWeight: FontWeight.w900)),
+                              Text('Relationship Oriented, \nResults Driven',
+                                  style: theme.textTheme.displaySmall!.copyWith(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.w900)),
                             ],
                           ),
                         ],
                       ),
-                      const SizedBox(height: kDefaultPadding),
+                      const SizedBox(height: 20),
                       const AboutSectionText(text: aboutMeTexta),
-                      ResponsiveWidget.isSmallScreen(context)
-                          ? const SizedBox(height: 50)
-                          : const SizedBox(height: 0),
+                      const SizedBox(height: 20),
                       const ExperienceCountCard(expNum: '10'),
-                      const SizedBox(height: kDefaultPadding * 3.5),
+                      const SizedBox(height: 20),
                       const AboutSectionText(text: aboutMeTextb),
                     ],
                   ),
                 ),
           const SizedBox(height: kDefaultPadding / 5),
-          const SizedBox(height: 70),
+          const SizedBox(height: 40), //this one
           ResponsiveWidget.isLargeScreen(context)
-              ? Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const SizedBox(width: kDefaultPadding * 3),
-                    AnOutlinedButton(
-                      width: 210,
-                      text: 'Contact Us',
-                      imageSrc: hireUs,
-                      press: () {
-                        selectedIndex = 5;
-
-                        Obx(scrollcontroller.scrollTo(context, selectedIndex));
-                      },
-                    ),
-                    const SizedBox(width: kDefaultPadding * 1 * 4),
-                    ATextButton(
-                      width: 220,
-                      text: 'Past Work',
-                      imageSrc: ourWork,
-                      press: () {
-                        selectedIndex = 3;
-                        Obx(scrollcontroller.scrollTo(context, selectedIndex));
-                      },
-                    ),
-                    const SizedBox(width: kDefaultPadding * 1 * 4),
-                  ],
-                )
+              ? SizedBox(height: 0)
               : Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -138,7 +143,8 @@ class AboutSection extends StatelessWidget {
                         press: () {
                           selectedIndex = 5;
                           Obx(
-                            scrollcontroller.scrollTo(context, selectedIndex),
+                            scrollcontroller.scrollToSmallScreen(
+                                context, selectedIndex),
                           );
                         }),
                     const SizedBox(height: kDefaultPadding),
@@ -147,9 +153,10 @@ class AboutSection extends StatelessWidget {
                       text: 'Our Past Work',
                       imageSrc: ourWork,
                       press: () {
-                        selectedIndex = 4;
+                        selectedIndex = 3;
                         Obx(
-                          scrollcontroller.scrollTo(context, selectedIndex),
+                          scrollcontroller.scrollToSmallScreen(
+                              context, selectedIndex),
                         );
                       }, //TODO: CV url
                     ),

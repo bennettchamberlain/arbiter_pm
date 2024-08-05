@@ -17,20 +17,18 @@ class Service {
 
 List<Service> services = [
   Service('App Development', appDev, 1, const Color(0xFFcce6ff),
-      ["iOS, Android, & Web Apps", "Dapps", "Maintenance & Support"]),
+      ["We bring software ideas to life on iOS, Android, & Web"]),
   Service('Website Development', webDev, 2, const Color(0xFFfddeb2), [
-    "Any Platform",
-    "SEO",
-    "Digital Marketing",
+    "From start to finish, we can build websites on any platform",
     //"Copywriting",
     //"Revisions & Support"
   ]),
   Service('UI-UX Design', uiUx, 3, const Color(0xFFefe3fe), [
-    "Brand Development",
-    "User Research",
-    "Web/App Design",
+    "We offer brand development, user research, \ncopywriting, and Web/App Design services",
+
     //"Application Wireframe"
   ]),
-  Service('Cloud Services', cloud, 4, const Color(0xFFd3decc),
-      ["Google cloud", "Microsoft Azure", "Amazon Web Services"]),
+  Service('Cloud Services', cloud, 4, const Color(0xFFd3decc), [
+    "Run your website or software from the cloud \nwithout the headache of maintenance or updates"
+  ]),
 ];

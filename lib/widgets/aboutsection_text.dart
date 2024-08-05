@@ -22,8 +22,8 @@ class AboutSectionText extends StatelessWidget {
       child: Text(
         text,
         textAlign: TextAlign.left,
-        style: theme.textTheme.bodyText1!
-            .copyWith(fontSize: 18, fontWeight: FontWeight.w300),
+        style: theme.textTheme.bodyLarge!
+            .copyWith(fontSize: 21, fontWeight: FontWeight.w300),
       ),
     );
   }

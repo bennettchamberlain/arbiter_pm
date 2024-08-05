@@ -33,7 +33,7 @@ class LandingSect extends StatelessWidget {
                   child: const LoGo()),
               const Spacer(),
               const GlassContent(),
-              const Spacer(flex: 3),
+              const Spacer(flex: 2),
             ],
           ),
           ResponsiveWidget.isSmallScreen(context)

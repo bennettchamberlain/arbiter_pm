@@ -54,8 +54,8 @@ class HireMeCard extends StatelessWidget {
                     : const SizedBox(),
                 ResponsiveWidget.isLargeScreen(context)
                     ? const Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: kDefaultPadding),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: kDefaultPadding),
                         child: SizedBox(
                           height: 80,
                           child: VerticalDivider(),
@@ -122,8 +122,8 @@ class HireMeCard extends StatelessWidget {
                     : const SizedBox(),
                 ResponsiveWidget.isLargeScreen(context)
                     ? const Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: kDefaultPadding),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: kDefaultPadding),
                         child: SizedBox(
                           height: 80,
                           child: VerticalDivider(),
@@ -170,7 +170,7 @@ class HireMeCard extends StatelessWidget {
                             text: 'Contact Us',
                             press: () {
                               selectedIndex = 5;
-                              Obx(scrollcontroller.scrollTo(
+                              Obx(scrollcontroller.scrollToSmallScreen(
                                   context, selectedIndex));
                             },
                           ),
