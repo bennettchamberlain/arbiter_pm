@@ -4,7 +4,7 @@ import '../constants/colors.dart';
 import '../constants/constants.dart';
 
 class SmallSocialCard extends StatefulWidget {
-  SmallSocialCard({
+  const SmallSocialCard({
     Key? key,
     required this.iconSrc,
     required this.size,
@@ -40,20 +40,20 @@ class _SmallSocialCardState extends State<SmallSocialCard> {
         child: FittedBox(
           child: AnimatedContainer(
             duration: hoverAnimationDuration,
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
               vertical: kDefaultPadding * .3,
               horizontal: kDefaultPadding * .3,
             ),
             decoration: BoxDecoration(
-              color: widget.color,
+              color: platinum,
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 if (isHover)
                   BoxShadow(
-                    offset: Offset(0, 10),
+                    offset: const Offset(0, 10),
                     blurRadius: 50,
                     color: theme.brightness == Brightness.light
-                        ? kPitchDark.withOpacity(.1)
+                        ? russianViolet.withOpacity(.1)
                         : whitebackgroundColor.withOpacity(.1),
                   ),
               ],

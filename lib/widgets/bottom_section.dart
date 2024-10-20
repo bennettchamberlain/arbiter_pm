@@ -24,9 +24,9 @@ class BottomSection extends StatelessWidget {
       width: _.width,
       color:
           theme.brightness == Brightness.light ? kBottomBarColor : kPitchDark,
-      padding: EdgeInsets.only(bottom: kDefaultPadding * 3),
+      padding: const EdgeInsets.only(bottom: kDefaultPadding * 3),
       child: Transform.translate(
-        offset: Offset(0, -5),
+        offset: const Offset(0, -5),
         child: Stack(
           children: [
             ClipShadowPath(
@@ -45,19 +45,32 @@ class BottomSection extends StatelessWidget {
             ),
             Align(
               alignment: Alignment.bottomCenter,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
-                    "Developed in $lovemoji with ",
-                    style: theme.textTheme.bodySmall!
-                        .copyWith(color: whitebackgroundColor),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        "From Scratch with $lovemoji in ",
+                        style: theme.textTheme.bodySmall!
+                            .copyWith(color: whitebackgroundColor),
+                      ),
+                      InkWell(
+                        onTap: () => launchURLs(gitHubRepoLink),
+                        child: Image.asset(flutter, height: 16),
+                      ),
+                    ],
                   ),
-                  InkWell(
-                    onTap: () => launchURLs(gitHubRepoLink),
-                    child: Image.asset(flutter, height: 16),
-                  )
+                  const SizedBox(height: 20),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushNamed("/reports");
+                      },
+                      child: const Text("Admin",
+                          style:
+                              TextStyle(decoration: TextDecoration.underline)))
                 ],
               ),
             ),
@@ -66,7 +79,7 @@ class BottomSection extends StatelessWidget {
               right: kDefaultPadding * 2,
               child: SmallSocialCard(
                 iconSrc: toTopIconImage,
-                color: Color.fromARGB(255, 218, 252, 250),
+                color: const Color.fromARGB(255, 218, 252, 250),
                 size: 25,
                 press: () => Obx(scrollcontroller.goToTop()),
               ),

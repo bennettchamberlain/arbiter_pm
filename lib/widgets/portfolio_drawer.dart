@@ -1,17 +1,14 @@
 import 'dart:math';
-
 import 'package:arbiter_pm/widgets/drawer_button.dart';
 import 'package:arbiter_pm/widgets/responsive_widget.dart';
 import 'package:arbiter_pm/widgets/small_social_card.dart';
 import 'package:flutter/material.dart' hide DrawerButton;
 import 'package:get/get.dart';
-
 import '../constants/colors.dart';
 import '../constants/constants.dart';
 import '../constants/image_paths.dart';
 import '../constants/text_logs.dart';
 import '../controllers/scrolling_controller.dart';
-import '../controllers/theme_controller.dart';
 
 class PortfolioDrawer extends StatefulWidget {
   const PortfolioDrawer({
@@ -26,17 +23,14 @@ class PortfolioDrawer extends StatefulWidget {
 }
 
 class _PortfolioDrawerState extends State<PortfolioDrawer> {
-  double value = 0;
   static var scrollcontroller = Get.find<ScrollingController>();
-  static var themeController = Get.find<ThemeController>();
 
   List<String> menuItems = [
     'Home',
     'About',
     'Services',
-    'Portfolio',
-    'Testimonial',
-    'Contact',
+    'Our Work',
+    'Testimonials',
   ];
 
   @override
@@ -53,7 +47,7 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
               gradient: LinearGradient(
                 colors: theme.brightness == Brightness.light
                     ? [primaryColor, kPink]
-                    : [bgColorDarkTheme, textColorLightTheme],
+                    : [davyGrey, eerieBlack],
                 begin: Alignment.bottomLeft,
                 end: Alignment.topRight,
               ),
@@ -62,29 +56,74 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
           SafeArea(
             child: Container(
               width: _.width * .45,
-              padding: EdgeInsets.all(kDefaultPadding * 1.2),
+              padding: const EdgeInsets.all(kDefaultPadding * 1.2),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: 250,
+                    height: 255,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        const SizedBox(height: kDefaultPadding),
                         Align(
-                          alignment: Alignment.topLeft,
-                          child: SmallSocialCard(
-                            iconSrc: theme.brightness == Brightness.light
-                                ? darkModeImage
-                                : lightModeImage,
-                            color: theme.brightness == Brightness.light
-                                ? bgColorDarkTheme
-                                : kPink,
-                            size: 25,
-                            press: () => themeController.toggleTheme(),
+                          alignment: Alignment.center,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    shape: RoundedRectangleBorder(
+                                        side: const BorderSide(
+                                            width: 2, // thickness
+                                            color: Colors.white // color
+                                            ),
+                                        // border radius
+                                        borderRadius:
+                                            BorderRadius.circular(16))),
+                                onPressed: () {
+                                  Navigator.of(context).pushNamed("/invoice");
+                                },
+                                child: Container(
+                                  padding: const EdgeInsets.all(5),
+                                  child: const Text(
+                                    "PAY INVOICE",
+                                    style: TextStyle(
+                                        fontSize: 11,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: kDefaultPadding),
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    shape: RoundedRectangleBorder(
+                                        side: const BorderSide(
+                                            width: 2, // thickness
+                                            color: Colors.white // color
+                                            ),
+                                        // border radius
+                                        borderRadius:
+                                            BorderRadius.circular(16))),
+                                onPressed: () {
+                                  selectedIndex = 5;
+                                  Obx(scrollcontroller.scrollToSmallScreen(
+                                      context, selectedIndex));
+                                },
+                                child: Container(
+                                  padding: const EdgeInsets.all(5),
+                                  child: const Text(
+                                    "CONTACT US",
+                                    style: TextStyle(
+                                        fontSize: 11,
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                        SizedBox(height: kDefaultPadding),
+                        const SizedBox(height: kDefaultPadding),
                         Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: kDefaultPadding * 1.5),
@@ -93,36 +132,22 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                             width: 100,
                             clipBehavior: Clip.antiAlias,
                             decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: kPinker.withOpacity(.2),
-                              border: Border.all(
-                                color: primaryColor,
-                                width: 4,
-                              ),
                               boxShadow: [
                                 BoxShadow(
-                                  offset: Offset(0, 10),
+                                  offset: const Offset(0, 10),
                                   blurRadius: 50,
                                   color: theme.brightness == Brightness.light
-                                      ? kPitchDark.withOpacity(.1)
-                                      : whitebackgroundColor.withOpacity(.1),
+                                      ? kPitchDark.withOpacity(.9)
+                                      : whitebackgroundColor.withOpacity(.9),
                                 ),
                               ],
-                              image: DecorationImage(
-                                  image: AssetImage(personaPic)),
+                              image: const DecorationImage(
+                                  image: AssetImage(starsTogether)),
                             ),
                           ),
                         ),
-                        SizedBox(height: kDefaultPadding * .5),
-                        Text(
-                          'Steve Chege',
-                          style: theme.textTheme.headline6!.copyWith(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 18,
-                            letterSpacing: 0,
-                          ),
-                        ),
-                        SizedBox(height: kDefaultPadding),
+                        const SizedBox(height: kDefaultPadding * .5),
+                        const SizedBox(height: kDefaultPadding),
                       ],
                     ),
                   ),
@@ -144,19 +169,19 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       SmallSocialCard(
+                        iconSrc: iconPicWhatsApp,
+                        color: const Color(0xFFE4FFC7),
+                        size: 25,
+                        press: () => launchURLs(whatsAppLink),
+                      ),
+                      const SizedBox(width: kDefaultPadding),
+                      SmallSocialCard(
                         iconSrc: iconPicTwitter,
-                        color: Color(0xFFE4FFC7),
+                        color: const Color(0xFFE8F0F9),
                         size: 25,
                         press: () => launchURLs(twitterLink),
                       ),
-                      SizedBox(width: kDefaultPadding),
-                      SmallSocialCard(
-                        iconSrc: iconPicGithub,
-                        color: Color(0xFFE8F0F9),
-                        size: 25,
-                        press: () => launchURLs(githubLink),
-                      ),
-                      SizedBox(width: kDefaultPadding),
+                      const SizedBox(width: kDefaultPadding),
                     ],
                   ),
                 ],
@@ -196,6 +221,7 @@ class _PortfolioDrawerState extends State<PortfolioDrawer> {
                   },
                 )
               : widget.child,
+          
         ],
       ),
     );

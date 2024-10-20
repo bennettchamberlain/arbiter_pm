@@ -14,16 +14,18 @@ class FeedBackSection extends StatelessWidget {
     final Size _ = MediaQuery.of(context).size;
 
     return Container(
-      padding: EdgeInsets.symmetric(vertical: kDefaultPadding * 2.5),
+      padding: const EdgeInsets.symmetric(vertical: kDefaultPadding * 2.5),
       constraints: BoxConstraints(maxWidth: _.width * .9),
       child: Column(
         children: [
           SectionTitle(
-            title: 'Feedback Recieved',
-            subTitle: 'Client\'s testimonials that inspired me a lot',
-            color: Color(0xFF00B1FF),
+            title: ResponsiveWidget.isLargeScreen(context)
+                ? 'Client Testimonials'
+                : "Testimonials",
+            subTitle: 'Our Feedback',
+            color: const Color(0xFF00B1FF),
           ),
-          SizedBox(height: kDefaultPadding),
+          const SizedBox(height: kDefaultPadding),
           ResponsiveWidget.isLargeScreen(context)
               ? Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -34,7 +36,7 @@ class FeedBackSection extends StatelessWidget {
                 )
               : SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
-                  physics: BouncingScrollPhysics(
+                  physics: const BouncingScrollPhysics(
                     parent: AlwaysScrollableScrollPhysics(),
                   ),
                   child: Padding(

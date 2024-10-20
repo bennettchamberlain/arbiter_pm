@@ -23,8 +23,8 @@ class ContactSection extends StatelessWidget {
             color: theme.brightness == Brightness.light
                 ? whitebackgroundColor
                 : bgColorDarkTheme,
-            image: DecorationImage(
-              image: AssetImage(contactsectionBackgroundImage),
+            image: const DecorationImage(
+              image: AssetImage(bg_img1),
               fit: BoxFit.cover,
             ),
           ),
@@ -33,10 +33,10 @@ class ContactSection extends StatelessWidget {
           alignment: Alignment.center,
           child: Column(
             children: [
-              SizedBox(height: kDefaultPadding * 2.5),
-              SectionTitle(
-                title: 'Contact Me',
-                subTitle: 'For Project inquiry and information',
+              const SizedBox(height: kDefaultPadding * 2.5),
+              const SectionTitle(
+                title: 'Contact Us',
+                subTitle: 'For Confidential Consultation',
                 color: Color(0xFF07E24A),
               ),
               Padding(
@@ -44,9 +44,9 @@ class ContactSection extends StatelessWidget {
                     horizontal: ResponsiveWidget.isLargeScreen(context)
                         ? 0
                         : kDefaultPadding),
-                child: ContactBox(),
+                child: const ContactBox(),
               ),
-              SizedBox(height: kDefaultPadding * 5),
+              const SizedBox(height: kDefaultPadding * 5),
             ],
           ),
         ),

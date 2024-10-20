@@ -48,14 +48,14 @@ class ScrollingController extends GetxController {
           i == 0
               ? 0.0
               : i == 1
-                  ? MediaQuery.of(context).size.height * .9
+                  ? MediaQuery.of(context).size.height * .8
                   : i == 2
-                      ? MediaQuery.of(context).size.height * 1.61
+                      ? MediaQuery.of(context).size.height * 1.31
                       : i == 3
-                          ? MediaQuery.of(context).size.height * 2.9
+                          ? MediaQuery.of(context).size.height * 2.20
                           : i == 4
-                              ? MediaQuery.of(context).size.height * 4.3
-                              : MediaQuery.of(context).size.height * 5.3, //
+                              ? MediaQuery.of(context).size.height * 3.62
+                              : MediaQuery.of(context).size.height * 4.36, //
           duration: scrollAnimationDuration,
           curve: scrollAnimationCurve);
 
@@ -66,15 +66,15 @@ class ScrollingController extends GetxController {
               : i == 1
                   ? MediaQuery.of(context).size.height * .9 // about
                   : i == 2
-                      ? MediaQuery.of(context).size.height * 2.4 // services
+                      ? MediaQuery.of(context).size.height * 2.26 // services
                       : i == 3
                           ? MediaQuery.of(context).size.height *
-                              3.4 // portfolio
+                              3.51 // portfolio
                           : i == 4
                               ? MediaQuery.of(context).size.height *
-                                  5.8 // testimonial
+                                  5.6 // testimonial
                               : MediaQuery.of(context).size.height *
-                                  6.7, // contact
+                                  7.25, // contact
           duration: scrollAnimationDuration,
           curve: scrollAnimationCurve);
 

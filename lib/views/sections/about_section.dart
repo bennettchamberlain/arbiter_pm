@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import '../../constants/image_paths.dart';
 import '../../constants/text_logs.dart';
@@ -25,102 +26,138 @@ class AboutSection extends StatelessWidget {
       constraints: BoxConstraints(
         maxWidth: _.width * .8,
       ),
-      margin: EdgeInsets.symmetric(vertical: kDefaultPadding * 2),
+      margin: const EdgeInsets.symmetric(vertical: kDefaultPadding * 2),
       padding: EdgeInsets.symmetric(
           horizontal: ResponsiveWidget.isLargeScreen(context)
-              ? kDefaultPadding * 10
+              ? kDefaultPadding * 8
               : kDefaultPadding * 1.5),
       child: Column(
         children: [
-          SizedBox(height: kDefaultPadding * 2),
+          const SizedBox(height: kDefaultPadding * 2),
           ResponsiveWidget.isLargeScreen(context)
               ? Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Column(
-                      children: [
-                        Text(' About \nmy story',
-                            style: theme.textTheme.headline2!
-                                .copyWith(fontWeight: FontWeight.w900)),
-                        SizedBox(height: 25),
-                        Image.asset(
-                            theme.brightness == Brightness.light
-                                ? signaturePic
-                                : signaturePicWhite,
-                            width: 200),
-                      ],
+                    Expanded(
+                      flex: 2,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Relationship Oriented\nResults Driven',
+                            style: theme.textTheme.displayMedium!.copyWith(
+                              fontWeight: FontWeight.w900,
+                              fontSize: 32,
+                            ),
+                          ),
+                          const SizedBox(height: 20),
+                          const ExperienceCountCard(expNum: '10'),
+                        ],
+                      ),
                     ),
-                    Expanded(child: AboutSectionText(text: aboutMeTexta)),
-                    ExperienceCountCard(expNum: '03'),
-                    Expanded(child: AboutSectionText(text: aboutMeTextb)),
+                    const SizedBox(width: 40),
+                    Expanded(
+                      flex: 3,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          AboutSectionText(text: aboutMeTexta),
+                          const SizedBox(height: 30),
+                          AboutSectionText(text: aboutMeTextb),
+                          const SizedBox(height: 40),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              AnOutlinedButton(
+                                width: 200,
+                                text: 'Contact Us',
+                                imageSrc: hireUs,
+                                press: () {
+                                  selectedIndex = 5;
+                                  scrollcontroller.scrollTo(
+                                      context, selectedIndex);
+                                },
+                              ),
+                              const SizedBox(width: kDefaultPadding),
+                              ATextButton(
+                                width: 200,
+                                text: 'Past Work',
+                                imageSrc: ourWork,
+                                press: () {
+                                  selectedIndex = 3;
+                                  scrollcontroller.scrollTo(
+                                      context, selectedIndex);
+                                },
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 )
-              : Container(
-                  height: _.height * 1.3,
+              : SizedBox(
+                  height: _.height * 1,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         children: [
-                          Text('  About \nmy story',
-                              style: theme.textTheme.headline2!
-                                  .copyWith(fontWeight: FontWeight.w900)),
-                          SizedBox(height: 25),
-                          Image.asset(
-                              theme.brightness == Brightness.light
-                                  ? signaturePic
-                                  : signaturePicWhite,
-                              width: 200),
+                          Row(
+                            children: [
+                              ResponsiveWidget.isLargeScreen(context)
+                                  ? const SizedBox(
+                                      width: kDefaultPadding,
+                                    )
+                                  : const SizedBox(width: kDefaultPadding),
+                              Text('Relationship Oriented, \nResults Driven',
+                                  style: theme.textTheme.displaySmall!.copyWith(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.w900)),
+                            ],
+                          ),
                         ],
                       ),
-                      SizedBox(height: kDefaultPadding),
-                      Expanded(
-                        child: AboutSectionText(text: aboutMeTexta),
-                      ),
-                      ExperienceCountCard(expNum: '03'),
-                      SizedBox(height: kDefaultPadding * 1.8),
-                      Expanded(
-                        child: AboutSectionText(text: aboutMeTextb),
-                      ),
+                      const SizedBox(height: 20),
+                      const AboutSectionText(text: aboutMeTexta),
+                      const SizedBox(height: 20),
+                      const ExperienceCountCard(expNum: '10'),
+                      const SizedBox(height: 20),
+                      const AboutSectionText(text: aboutMeTextb),
                     ],
                   ),
                 ),
-          SizedBox(height: kDefaultPadding * 3),
+          const SizedBox(height: kDefaultPadding / 5),
+          const SizedBox(height: 40), //this one
           ResponsiveWidget.isLargeScreen(context)
-              ? Row(
+              ? SizedBox(height: 0)
+              : Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     AnOutlinedButton(
-                      width: 200,
-                      text: 'Hire Me',
-                      imageSrc: iconHandPic,
-                      press: () => launchEmailUrl(),
-                    ),
-                    SizedBox(width: kDefaultPadding * 1 * 5),
+                        width: 220,
+                        text: 'Contact Us',
+                        imageSrc: hireUs,
+                        press: () {
+                          selectedIndex = 5;
+                          Obx(
+                            scrollcontroller.scrollToSmallScreen(
+                                context, selectedIndex),
+                          );
+                        }),
+                    const SizedBox(height: kDefaultPadding),
                     ATextButton(
-                      width: 200,
-                      text: 'Download \n   my CV',
-                      imageSrc: iconDownloadPic,
-                      press: () {}, //TODO: CV url
-                    ),
-                    SizedBox(width: kDefaultPadding * 1 * 5),
-                  ],
-                )
-              : Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    AnOutlinedButton(
-                      width: 175,
-                      text: 'Hire Me',
-                      imageSrc: iconHandPic,
-                      press: () => launchEmailUrl(),
-                    ),
-                    SizedBox(width: kDefaultPadding * .4),
-                    ATextButton(
-                      width: 175,
-                      text: 'Download \n   my CV',
-                      imageSrc: iconDownloadPic,
-                      press: () {}, //TODO: CV url
+                      width: 220,
+                      text: 'Our Past Work',
+                      imageSrc: ourWork,
+                      press: () {
+                        selectedIndex = 3;
+                        Obx(
+                          scrollcontroller.scrollToSmallScreen(
+                              context, selectedIndex),
+                        );
+                      }, //TODO: CV url
                     ),
                   ],
                 ),

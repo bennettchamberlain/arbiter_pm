@@ -3,14 +3,14 @@ import 'package:get/get.dart';
 
 import '../constants/constants.dart';
 
-class CarouseLController extends GetxController {  
-static final carouselCtrl = Get.find<CarouseLController>();
+class CarouseLController extends GetxController {
+  static final carouselCtrl = Get.find<CarouseLController>();
 
-  CarouselController slideController = CarouselController();
+  CarouselSliderController slideController = CarouselSliderController();
 
   @override
   void onInit() {
-    slideController = CarouselController();
+    slideController = CarouselSliderController();
     super.onInit();
   }
 
@@ -18,7 +18,7 @@ static final carouselCtrl = Get.find<CarouseLController>();
     height: 600,
     viewportFraction: 1.0,
     autoPlay: true,
-    autoPlayInterval: const Duration(minutes: 2),
+    autoPlayInterval: const Duration(seconds: 30),
     autoPlayAnimationDuration: hoverAnimationDuration,
     enlargeStrategy: CenterPageEnlargeStrategy.scale,
     autoPlayCurve: slidingAnimationCurve,

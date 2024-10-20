@@ -37,9 +37,9 @@ class Themes {
 
 final elevatedButtonThemeData = ElevatedButtonThemeData(
   style: ElevatedButton.styleFrom(
-    primary: primaryColor,
-    padding: EdgeInsets.all(kDefaultPadding * .8),
-    shape: RoundedRectangleBorder(
+    backgroundColor: primaryColor,
+    padding: const EdgeInsets.all(kDefaultPadding * .8),
+    shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(kDefaultPadding)),
     ),
     shadowColor: textColorLightTheme.withOpacity(.5),
@@ -50,8 +50,8 @@ final textButtonThemeData = TextButtonThemeData(
   style: ButtonStyle(
     backgroundColor: MaterialStateProperty.resolveWith<Color>(
       (Set<MaterialState> states) => (states.contains(MaterialState.hovered))
-          ? Color(0xFFD9FFFC)
-          : Color(0xFFE8F0F9),
+          ? const Color(0xFF9C6CAB)
+          : const Color(0xFFD8DBE2),
     ),
     shape: MaterialStateProperty.resolveWith<OutlinedBorder>(
       (Set<MaterialState> states) => RoundedRectangleBorder(
@@ -59,7 +59,7 @@ final textButtonThemeData = TextButtonThemeData(
       ),
     ),
     padding: MaterialStateProperty.resolveWith<EdgeInsetsGeometry>(
-      (Set<MaterialState> states) => EdgeInsets.symmetric(
+      (Set<MaterialState> states) => const EdgeInsets.symmetric(
         horizontal: kDefaultPadding * 1.5,
         vertical: kDefaultPadding,
       ),
@@ -70,20 +70,20 @@ final textButtonThemeData = TextButtonThemeData(
 final outlinedButtonThemeData = OutlinedButtonThemeData(
   style: OutlinedButton.styleFrom(
     backgroundColor: primaryColor,
-    padding: EdgeInsets.symmetric(
+    padding: const EdgeInsets.symmetric(
       horizontal: kDefaultPadding * 1.5,
       vertical: kDefaultPadding,
     ),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(50),
-      side: BorderSide(
+      side: const BorderSide(
         color: kTextColor,
       ),
     ),
   ),
 );
 
-final kInputDecorationTheme = InputDecorationTheme(
+const kInputDecorationTheme = InputDecorationTheme(
   border: kDefaultOutlineInputBorder,
   enabledBorder: kDefaultOutlineInputBorder,
   focusedBorder: kDefaultOutlineInputBorder,

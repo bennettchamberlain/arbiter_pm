@@ -53,7 +53,7 @@ class _SocialCardState extends State<SocialCard> {
             boxShadow: [
               if (isHover)
                 BoxShadow(
-                  offset: Offset(0, 10),
+                  offset: const Offset(0, 10),
                   blurRadius: 50,
                   color: theme.brightness == Brightness.light
                       ? kPitchDark.withOpacity(.1)
@@ -69,11 +69,11 @@ class _SocialCardState extends State<SocialCard> {
                 width: ResponsiveWidget.isSmallScreen(context) ? 40 : 80,
               ),
               ResponsiveWidget.isLargeScreen(context)
-                  ? SizedBox(width: kDefaultPadding)
-                  : SizedBox(),
+                  ? const SizedBox(width: kDefaultPadding)
+                  : const SizedBox(),
               ResponsiveWidget.isLargeScreen(context)
-                  ? Text(widget.name, style: buttonTextStyle)
-                  : SizedBox(),
+                  ? Text(widget.name, style: buttonTextStyle3)
+                  : const SizedBox(),
             ],
           ),
         ),

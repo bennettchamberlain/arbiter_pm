@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../models/recentwork_model.dart';
 import '../constants/colors.dart';
 import '../constants/text_styles.dart';
+import 'recent_work_dialog.dart';
 
 class RecentWorkCard extends StatefulWidget {
   const RecentWorkCard({
@@ -49,7 +50,7 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
           boxShadow: [
             if (isHover)
               BoxShadow(
-                offset: Offset(0, 10),
+                offset: const Offset(0, 10),
                 blurRadius: 50,
                 color: theme.brightness == Brightness.light
                     ? kPitchDark.withOpacity(.1)
@@ -66,69 +67,52 @@ class _RecentWorkCardState extends State<RecentWorkCard> {
               height: cardHight,
               width: ResponsiveWidget.isLargeScreen(context)
                   ? cardWidth * .5
-                  : cardWidth * .4,
+                  : cardWidth * .3,
             ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: kDefaultPadding * .6,
-                  vertical: kDefaultPadding,
+                  vertical: kDefaultPadding / 2,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(height: kDefaultPadding),
+                    //SizedBox(height: kDefaultPadding),
                     Expanded(
                       child: Text(
                           recentWorks[widget.index].category.toUpperCase(),
                           style: recentworkcardText1TextStyle),
                     ),
-                    SizedBox(height: kDefaultPadding * .5),
+                    const SizedBox(height: kDefaultPadding * .5),
                     Text(
                       recentWorks[widget.index].title,
                       style: TextStyle(
                         fontFamily: 'Helvetica Now Display',
                         fontWeight: FontWeight.w400,
                         fontSize:
-                            ResponsiveWidget.isSmallScreen(context) ? 25 : 33,
+                            ResponsiveWidget.isSmallScreen(context) ? 18 : 28,
                         letterSpacing: -.3,
                         color: kTextColor,
                       ),
                     ),
-                    SizedBox(height: kDefaultPadding),
+                    const SizedBox(height: kDefaultPadding * 0.8),
                     Expanded(
                       child: InkWell(
                         onTap: () {
                           showDialog(
                             context: context,
                             builder: (context) {
-                              return Scaffold(
-                                backgroundColor: whitebackgroundColor,
-                                body: Container(
-                                    height: 100,
-                                    width: 100,
-                                    color: whitebackgroundColor,
-                                    child: Column(
-                                      children: [
-                                        IconButton(
-                                            onPressed: () {
-                                              Navigator.of(context).pop();
-                                            },
-                                            icon:
-                                                Icon(Icons.keyboard_backspace)),
-                                        Text("Hello"),
-                                      ],
-                                    )),
-                              );
+                              return RecentWorkDialog(index: widget.index);
                             },
                           );
                         },
-                        child: Text('View Details',
+                        child: const Text('View Details',
                             style: recentworkcardText3TextStyle),
                       ),
                     ),
-                    SizedBox(height: kDefaultPadding * .5),
+                    const SizedBox(height: kDefaultPadding * .2),
                   ],
                 ),
               ),

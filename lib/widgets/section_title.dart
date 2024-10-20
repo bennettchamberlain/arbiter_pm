@@ -21,7 +21,7 @@ class SectionTitle extends StatelessWidget {
     final ThemeData theme = Theme.of(context);
 
     return Container(
-      margin: EdgeInsets.symmetric(vertical: kDefaultPadding),
+      margin: const EdgeInsets.symmetric(vertical: kDefaultPadding),
       constraints: BoxConstraints(maxWidth: _.width * .9),
       height: 100,
       child: Padding(
@@ -36,15 +36,15 @@ class SectionTitle extends StatelessWidget {
         child: Row(
           children: [
             Container(
-              padding: EdgeInsets.only(bottom: 75),
-              margin: EdgeInsets.only(right: kDefaultPadding),
+              padding: const EdgeInsets.only(bottom: 75),
+              margin: const EdgeInsets.only(right: kDefaultPadding),
               width: 8,
               height: 100,
               clipBehavior: Clip.antiAlias,
               decoration: BoxDecoration(
                 color: theme.brightness == Brightness.light
                     ? kPitchDark
-                    : bodyTextColorDarkTheme,
+                    : whitebackgroundColor,
                 borderRadius: BorderRadius.circular(4),
               ),
               child: DecoratedBox(
@@ -66,7 +66,7 @@ class SectionTitle extends StatelessWidget {
                     letterSpacing: 1,
                     color: theme.brightness == Brightness.light
                         ? kTextColor
-                        : kTextColor,
+                        : whitebackgroundColor,
                   ),
                 ),
                 Text(
@@ -78,7 +78,7 @@ class SectionTitle extends StatelessWidget {
                     letterSpacing: -.7,
                     color: theme.brightness == Brightness.light
                         ? kPitchDark
-                        : bodyTextColorDarkTheme,
+                        : whitebackgroundColor,
                   ),
                 ),
               ],

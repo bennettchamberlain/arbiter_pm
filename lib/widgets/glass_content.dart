@@ -31,15 +31,15 @@ class GlassContent extends StatelessWidget {
       shadowStrength: 1,
       opacity: .001,
       border: Border.all(
-        color: whitebackgroundColor.withOpacity(.5),
-        width: .4,
+        color: Colors.white.withOpacity(.9),
+        width: 2,
       ),
       borderRadius: BorderRadius.circular(10),
       child: Padding(
         padding: EdgeInsets.symmetric(
           horizontal: ResponsiveWidget.isLargeScreen(context)
               ? kDefaultPadding * 6
-              : kDefaultPadding * 3,
+              : kDefaultPadding * 1.5,
           vertical: kDefaultPadding,
         ),
         child: Column(
@@ -47,41 +47,41 @@ class GlassContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Hello There!',
+              'Your Vision, Our Expertise',
               style: TextStyle(
                 fontFamily: 'Helvetica Now Display',
                 fontWeight: FontWeight.w400,
-                fontSize: ResponsiveWidget.isSmallScreen(context) ? 13 : 17,
+                fontSize: ResponsiveWidget.isSmallScreen(context) ? 18 : 25,
                 letterSpacing: 2,
                 color: theme.brightness == Brightness.light
                     ? whitebackgroundColor
                     : kPitchDark,
               ),
             ),
-            SizedBox(height: kDefaultPadding),
+            const SizedBox(height: kDefaultPadding),
             Text(
-              'Steve \nChege',
+              'Bespoke Digital \nTransformations',
               style: TextStyle(
                 fontFamily: 'Helvetica Now Display',
                 fontWeight: FontWeight.w800,
-                fontSize: ResponsiveWidget.isSmallScreen(context) ? 55 : 66,
+                fontSize: ResponsiveWidget.isSmallScreen(context) ? 24 : 56,
                 letterSpacing: 1,
                 color: theme.brightness == Brightness.light
                     ? whitebackgroundColor
                     : kPitchDark,
               ),
             ),
-            SizedBox(height: kDefaultPadding),
+            const SizedBox(height: kDefaultPadding),
             SizedBox(
-              height: kDefaultPadding * 2.5,
+              height: kDefaultPadding * 2.9,
               child: AnimatedTextKit(
-                pause: Duration(seconds: 1),
+                pause: const Duration(seconds: 1),
                 totalRepeatCount: 2,
                 animatedTexts: List.generate(
                   titlesText.length,
                   (i) => TyperAnimatedText(
                     titlesText[i],
-                    speed: Duration(milliseconds: 50),
+                    speed: const Duration(milliseconds: 50),
                     textStyle: animatedTextTextStyle,
                     curve: Curves.linear,
                   ),

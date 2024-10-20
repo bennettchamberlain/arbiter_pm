@@ -1,4 +1,5 @@
 import 'package:auto_animated/auto_animated.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,12 +17,15 @@ import '../widgets/mouse_magnet.dart';
 import '../widgets/portfolio_drawer.dart';
 
 class HomeView extends GetView<ScrollingController> {
-  HomeView({Key? key}) : super(key: key);
+  const HomeView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     final ThemeData theme = Theme.of(context);
+
+    FirebaseAnalytics.instance.logAppOpen();
+    FirebaseAnalytics.instance.logEvent(name: 'load_home_page');
 
     return SizedBox(
       height: size.height,
@@ -41,7 +45,7 @@ class HomeView extends GetView<ScrollingController> {
                       children: [
                         Column(
                           children: [
-                            LandingCarousel(),
+                            const LandingCarousel(),
                             Container(
                               color: theme.scaffoldBackgroundColor,
                               width: double.infinity,
@@ -49,7 +53,7 @@ class HomeView extends GetView<ScrollingController> {
                             ),
                           ],
                         ),
-                        Align(
+                        const Align(
                           alignment: Alignment.center,
                           child: LandingSect(),
                         ),
@@ -99,14 +103,14 @@ class HomeView extends GetView<ScrollingController> {
   }
 
   static final List<Widget> _sections = [
-    AboutSection(),
-    ServiceSection(),
-    RecentWorkSection(),
-    FeedBackSection(),
+    const AboutSection(),
+    const ServiceSection(),
+    const RecentWorkSection(),
+    const FeedBackSection(),
   ];
 
   static final List<Widget> _sectsBottom = [
-    ContactSection(),
-    BottomSection(),
+    const ContactSection(),
+    const BottomSection(),
   ];
 }

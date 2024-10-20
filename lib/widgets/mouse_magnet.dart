@@ -54,22 +54,22 @@ class _MouseMagnetState extends State<MouseMagnet> {
                   dX = e.localPosition.dx;
                   dY = e.localPosition.dy;
                 }),
-                child: Container(
+                child: SizedBox(
                   height: _.height,
                   width: _.width,
                   child: widget.body,
                 ),
               ),
               AnimatedPositioned(
-                top: dY,
+                top: dY - 12,
                 left: dX - 20,
                 duration: magnetMouseAnimationDuration,
                 child: AnimatedContainer(
                   duration: magnetMouseAnimationDuration,
-                  height: isOut ? 0 : 15,
-                  width: isOut ? 0 : 15,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(image: AssetImage(flutter))),
+                  height: isOut ? 0 : 18,
+                  width: isOut ? 0 : 18,
+                  decoration: const BoxDecoration(
+                      image: DecorationImage(image: AssetImage(star1))),
                 ),
               ),
             ],

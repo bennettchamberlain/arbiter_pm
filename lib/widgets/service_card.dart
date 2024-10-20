@@ -27,7 +27,11 @@ class _ServiceCardState extends State<ServiceCard> {
           horizontal:
               ResponsiveWidget.isLargeScreen(context) ? 0 : kDefaultPadding),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          setState(() {
+            serviceIndex = widget.index;
+          });
+        },
         onHover: (v) {
           setState(() {
             isHover = v;
@@ -39,14 +43,14 @@ class _ServiceCardState extends State<ServiceCard> {
           duration: hoverAnimationDuration,
           width: 256,
           height: 226,
-          margin: EdgeInsets.symmetric(vertical: kDefaultPadding * 2),
+          margin: const EdgeInsets.symmetric(vertical: kDefaultPadding * 2),
           decoration: BoxDecoration(
             color: services[widget.index].color,
             borderRadius: BorderRadius.circular(10),
             boxShadow: [
               if (isHover)
                 BoxShadow(
-                  offset: Offset(0, 10),
+                  offset: const Offset(0, 10),
                   blurRadius: 50,
                   color: theme.brightness == Brightness.light
                       ? kPitchDark.withOpacity(.1)
@@ -61,16 +65,16 @@ class _ServiceCardState extends State<ServiceCard> {
                 duration: hoverAnimationDuration,
                 width: 120,
                 height: 120,
-                padding: EdgeInsets.all(kDefaultPadding * 1.5),
+                padding: const EdgeInsets.all(kDefaultPadding * 1.5),
                 decoration: BoxDecoration(
                   color: theme.brightness == Brightness.light
                       ? whitebackgroundColor
-                      : Color.fromARGB(255, 188, 198, 219),
+                      : const Color.fromARGB(255, 188, 198, 219),
                   shape: BoxShape.circle,
                   boxShadow: [
                     if (!isHover)
                       BoxShadow(
-                        offset: Offset(0, 20),
+                        offset: const Offset(0, 20),
                         blurRadius: 30,
                         color: Colors.black.withOpacity(.1),
                       )
@@ -81,11 +85,17 @@ class _ServiceCardState extends State<ServiceCard> {
                   fit: BoxFit.fill,
                 ),
               ),
-              SizedBox(height: kDefaultPadding),
+              const SizedBox(height: kDefaultPadding),
               Text(
                 services[widget.index].title,
                 style: servicecardTextStyle,
               ),
+              (serviceIndex != widget.index)
+                  ? const SizedBox(height: 15)
+                  : const Divider(
+                      thickness: 5,
+                      color: Colors.red,
+                    )
             ],
           ),
         ),

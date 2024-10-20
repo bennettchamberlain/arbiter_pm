@@ -6,6 +6,7 @@ import '../../constants/colors.dart';
 import '../../constants/image_paths.dart';
 import '../../models/recentwork_model.dart';
 import '../../widgets/hireme_card.dart';
+import '../../widgets/recent_work_dialog.dart';
 import '../../widgets/recentwork_card.dart';
 import '../../widgets/responsive_widget.dart';
 
@@ -20,24 +21,24 @@ class RecentWorkSection extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         color: theme.brightness == Brightness.light
-            ? Color(0xFFF7E8FF)
+            ? const Color(0xFFF7E8FF)
             : bgColorDarkTheme,
-        image: DecorationImage(
-            fit: BoxFit.cover,
-            image: AssetImage(recentworksectionBackgroundImage)),
+        image: const DecorationImage(fit: BoxFit.cover, image: AssetImage(bg_img1)),
       ),
       child: Column(
         children: [
           Transform.translate(
-            offset: Offset(0, -50),
-            child: HireMeCard(),
+            offset: const Offset(0, -50),
+            child: const HireMeCard(),
           ),
           SectionTitle(
-            title: 'Recent Works',
-            subTitle: 'My Strong Arenas',
-            color: Color(0xFFFFB100),
+            title: ResponsiveWidget.isLargeScreen(context)
+                ? 'Client Success Showcase'
+                : "Our Clients",
+            subTitle: 'Portfolio Highlights',
+            color: const Color(0xFFFFB100),
           ),
-          SizedBox(height: kDefaultPadding * 1.5),
+          const SizedBox(height: kDefaultPadding * 1.5),
           SizedBox(
             width: 1110,
             child: Wrap(
@@ -55,13 +56,20 @@ class RecentWorkSection extends StatelessWidget {
                           : kDefaultPadding),
                   child: RecentWorkCard(
                     index: index,
-                    press: () {},
+                    press: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return RecentWorkDialog(index: index);
+                        },
+                      );
+                    },
                   ),
                 ),
               ),
             ),
           ),
-          SizedBox(height: kDefaultPadding * 3),
+          const SizedBox(height: kDefaultPadding * 3),
         ],
       ),
     );

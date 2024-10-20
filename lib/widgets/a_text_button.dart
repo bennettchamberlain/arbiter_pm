@@ -26,7 +26,7 @@ class ATextButton extends StatelessWidget {
         onPressed: press,
         clipBehavior: Clip.antiAlias,
         child: Center(
-          child: Row(
+          child:  Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
@@ -38,7 +38,9 @@ class ATextButton extends StatelessWidget {
                     ? kDefaultPadding * .3
                     : kDefaultPadding * .5,
               ),
-              Text(text, style: buttonTextStyle),
+              Text(text,
+                  style: buttonTextStyle2.copyWith(
+                      fontWeight: FontWeight.w700, letterSpacing: 1)),
             ],
           ),
         ),
