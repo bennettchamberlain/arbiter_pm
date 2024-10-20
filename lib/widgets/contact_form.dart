@@ -27,6 +27,7 @@ class ContactForm extends GetView<FormFieldsController> {
               if (v == '') {
                 return 'Please enter your name';
               }
+              return null;
             },
           ),
           PortfolioTextFormField(

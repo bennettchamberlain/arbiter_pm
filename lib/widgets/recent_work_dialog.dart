@@ -5,8 +5,8 @@ import 'package:arbiter_pm/models/recentwork_model.dart';
 import 'package:flutter/material.dart';
 
 class RecentWorkDialog extends StatefulWidget {
-  int index;
-  RecentWorkDialog({required this.index, Key? key}) : super(key: key);
+  final int index;
+  const RecentWorkDialog({required this.index, Key? key}) : super(key: key);
 
   @override
   State<RecentWorkDialog> createState() => _RecentWorkDialogState();

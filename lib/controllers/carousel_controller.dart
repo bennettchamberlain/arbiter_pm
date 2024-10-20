@@ -6,11 +6,11 @@ import '../constants/constants.dart';
 class CarouseLController extends GetxController {
   static final carouselCtrl = Get.find<CarouseLController>();
 
-  CarouselController slideController = CarouselController();
+  CarouselSliderController slideController = CarouselSliderController();
 
   @override
   void onInit() {
-    slideController = CarouselController();
+    slideController = CarouselSliderController();
     super.onInit();
   }
 
